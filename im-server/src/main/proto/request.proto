@@ -1,0 +1,107 @@
+syntax = "proto3";
+//定义protobuf的包名称空间
+option java_package = "com.sharer.server.core.proto";
+// 消息体名称
+option java_outer_classname = "RequestProto";
+
+
+/*聊天消息*/
+message Request {
+
+  enum     Category {
+    Login        = 0; // 登录
+    LoginResp    = 1; // 登录响应
+    Message      = 2; // 消息
+    MessageResp  = 3; // 消息响应
+    HearBeat     = 4; // 心跳检测
+    HearBeatResp = 5; // 心跳检测响应
+  }
+
+  // 消息类型
+  Category category = 1;
+
+  oneof    dataBody {
+    Login        login        = 2;
+    LoginResp    loginResp    = 3;
+    Message      message      = 4;
+    MessageResp  messageResp  = 5;
+    HearBeat     hearbeat     = 6;
+    HearBeatResp hearBeatResp = 7;
+  }
+}
+
+enum DeviceModel {
+  IOS     = 0;
+  ANDROID = 1;
+  WEB     = 2;
+}
+
+enum MsgType {
+  TEXT    = 0;
+  PICUTRE = 1;
+  VOICE   = 2;
+  VIDEO   = 3;
+}
+
+message Login {
+  // 唯一标识
+  uint64      id            = 1;
+  // 账号
+  string      account       = 2;
+  // token
+  string      token         = 3;
+  // 时间戳
+  uint64      timestamp     = 4;
+  // 设备类型
+  DeviceModel deviceModel   = 5;
+  // 客户端版本
+  string      clientVersion = 6;
+
+  string      systemVersion = 7;
+  // 状态
+  uint32      state         = 8;
+}
+
+message LoginResp {
+
+  uint32 state     = 1;
+
+  string account   = 2;
+  // 时间戳
+  uint64 timestamp = 3;
+
+}
+
+message Message {
+
+  // 唯一标识
+  uint64  id      = 1;
+  // 毫秒级别时间戳
+  uint64  time    = 2;
+  // 消息分类,图片消息,文字消息,语音消息,视频消息,心跳检测,心跳检测应答包
+  MsgType msgType = 3;
+  // 消息内容
+  string  content = 4;
+  // 发送人
+  string  from    = 5;
+  // 接受人
+  string  to      = 6;
+  // 消息状态
+  uint32  state   = 7;
+  // 是否已读
+  uint32  isread  = 8;
+
+}
+
+message MessageResp {
+
+}
+
+message HearBeat {
+
+}
+
+message HearBeatResp {
+
+}
+

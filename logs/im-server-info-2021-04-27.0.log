@@ -1,0 +1,361 @@
+2021-04-27 18:20:18.188 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 13592 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:20:18.190 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:20:18.728 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.448 seconds (JVM running for 2.127)
+2021-04-27 18:41:21.366 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 17308 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:41:21.372 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:41:21.953 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.346 seconds (JVM running for 1.864)
+2021-04-27 18:44:00.083 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 10908 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:44:00.086 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:44:00.662 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.294 seconds (JVM running for 1.816)
+2021-04-27 18:46:33.500 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 2468 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:46:33.502 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:46:34.044 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.044 seconds (JVM running for 1.404)
+2021-04-27 18:48:04.457 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 19220 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:48:04.460 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:48:05.015 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.279 seconds (JVM running for 1.797)
+2021-04-27 18:48:51.313 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 272 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:48:51.317 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:48:52.291 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-27 18:48:52.302 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-27 18:48:52.303 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 18:48:52.303 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-27 18:48:52.381 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-27 18:48:52.381 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1013 ms
+2021-04-27 18:48:52.587 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-27 18:48:52.775 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-27 18:48:52.819 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-27 18:48:52.828 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 2.24 seconds (JVM running for 2.725)
+2021-04-27 18:49:09.568 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-27 18:56:20.080 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 19524 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:56:20.083 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:56:20.463 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'getChatServer' defined in class path resource [com/sharer/server/config/ServerUtils.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=serverUtils; factoryMethodName=getChatServer; initMethodName=null; destroyMethodName=destroy; defined in class path resource [com/sharer/server/config/ServerUtils.class]] for bean 'getChatServer': There is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=serverConfig; factoryMethodName=getChatServer; initMethodName=null; destroyMethodName=destroy; defined in class path resource [com/sharer/server/config/ServerConfig.class]] bound.
+2021-04-27 18:56:20.470 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-27 18:56:20.487 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'getChatServer', defined in class path resource [com/sharer/server/config/ServerUtils.class], could not be registered. A bean with that name has already been defined in class path resource [com/sharer/server/config/ServerConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2021-04-27 18:56:44.453 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 17196 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:56:44.456 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:56:45.354 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-27 18:56:45.365 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-27 18:56:45.366 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 18:56:45.366 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-27 18:56:45.442 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-27 18:56:45.442 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 935 ms
+2021-04-27 18:56:45.618 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-27 18:56:45.750 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-27 18:56:45.804 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-27 18:56:45.812 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 2.022 seconds (JVM running for 2.519)
+2021-04-27 18:57:03.413 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 18760 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:57:03.416 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:57:04.343 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-27 18:57:04.353 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-27 18:57:04.353 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 18:57:04.354 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-27 18:57:04.427 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-27 18:57:04.428 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 963 ms
+2021-04-27 18:57:11.183 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-27 18:57:11.330 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-27 18:57:11.383 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-27 18:57:11.391 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 8.64 seconds (JVM running for 9.149)
+2021-04-27 18:57:46.082 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 16052 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 18:57:46.085 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 18:57:49.134 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 3.74 seconds (JVM running for 4.233)
+2021-04-27 19:01:00.455 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 13148 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:01:00.459 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:01:01.008 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.263 seconds (JVM running for 1.787)
+2021-04-27 19:01:21.733 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 19488 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:01:21.736 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:01:22.286 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.245 seconds (JVM running for 1.751)
+2021-04-27 19:04:04.780 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 17444 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:04:04.782 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:04:05.416 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.189 seconds (JVM running for 1.563)
+2021-04-27 19:05:34.988 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 19216 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:05:34.991 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:05:35.596 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.123 seconds (JVM running for 1.499)
+2021-04-27 19:11:47.226 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 4580 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:11:47.229 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:11:47.783 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.314 seconds (JVM running for 1.844)
+2021-04-27 19:13:50.668 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 13964 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:13:50.671 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:13:51.230 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.287 seconds (JVM running for 1.793)
+2021-04-27 19:14:55.234 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 16684 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:14:55.238 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:14:55.844 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.338 seconds (JVM running for 1.855)
+2021-04-27 19:15:20.808 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 18472 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:15:20.811 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:15:21.402 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.32 seconds (JVM running for 1.827)
+2021-04-27 19:15:57.014 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 13256 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:15:57.018 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:15:57.595 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.295 seconds (JVM running for 1.809)
+2021-04-27 19:32:00.770 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 13144 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:32:00.773 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:32:01.357 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.272 seconds (JVM running for 1.867)
+2021-04-27 19:35:06.049 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 10328 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:35:06.054 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:35:06.639 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.325 seconds (JVM running for 1.877)
+2021-04-27 19:37:29.282 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 19068 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:37:29.285 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:37:29.891 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.31 seconds (JVM running for 1.817)
+2021-04-27 19:39:45.773 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 17508 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:39:45.775 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:39:46.376 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.067 seconds (JVM running for 1.452)
+2021-04-27 19:45:23.148 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 11216 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:45:23.153 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:45:24.097 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-27 19:45:24.109 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-27 19:45:24.109 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 19:45:24.110 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-27 19:45:24.189 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-27 19:45:24.189 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 984 ms
+2021-04-27 19:45:24.382 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-27 19:45:24.525 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-27 19:45:24.579 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-27 19:45:24.589 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 2.098 seconds (JVM running for 2.595)
+2021-04-27 19:45:24.956 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x34ec24f1]'
+2021-04-27 19:45:24.965 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-27 19:45:24.980 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:134)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:550)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:504)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:489)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:248)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:348)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2021-04-27 19:45:25.061 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-27 19:46:24.959 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 19724 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:46:24.962 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:46:25.863 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-27 19:46:25.874 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-27 19:46:25.875 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 19:46:25.875 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-27 19:46:25.951 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-27 19:46:25.951 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 929 ms
+2021-04-27 19:46:26.130 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-27 19:46:26.264 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-27 19:46:26.313 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-27 19:46:26.322 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 2.039 seconds (JVM running for 2.601)
+2021-04-27 19:46:26.689 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xc9591980]'
+2021-04-27 19:46:26.697 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-27 19:46:26.712 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:134)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:550)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:504)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:489)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:248)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:348)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2021-04-27 19:46:26.793 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-27 19:46:43.592 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 3484 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:46:43.596 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:46:44.181 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.261 seconds (JVM running for 1.782)
+2021-04-27 19:46:44.625 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x38595113]'
+2021-04-27 19:46:44.634 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-27 19:46:44.650 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:134)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:550)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:504)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:489)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:248)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:348)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2021-04-27 19:47:01.497 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 17260 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:47:01.502 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:47:02.061 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.253 seconds (JVM running for 1.762)
+2021-04-27 19:47:02.504 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xca209dfc]'
+2021-04-27 19:47:02.633 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x12589d20]'
+2021-04-27 19:48:18.023 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 7712 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:48:18.026 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:48:18.603 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.321 seconds (JVM running for 1.805)
+2021-04-27 19:48:19.051 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x09b1df9f]'
+2021-04-27 19:48:19.176 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x8afd30e7]'
+2021-04-27 19:48:47.407 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 7808 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:48:47.411 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:48:47.892 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.183 seconds (JVM running for 1.693)
+2021-04-27 19:48:48.325 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x302d44e6]'
+2021-04-27 19:48:48.448 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xbcd9aa6a]'
+2021-04-27 19:55:20.152 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 13916 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:55:20.155 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:55:20.618 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.165 seconds (JVM running for 1.644)
+2021-04-27 19:55:21.082 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x5438bbdc]'
+2021-04-27 19:55:21.106 [nioEventLoopGroup-2-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   App Socket Server started on port 7002.                        *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+2021-04-27 19:55:21.204 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xef6348e9]'
+2021-04-27 19:55:21.224 [nioEventLoopGroup-4-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   webScoket Socket Server started on port 7003.                     *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+2021-04-27 19:55:43.149 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 7792 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:55:43.152 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:55:43.586 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.096 seconds (JVM running for 1.592)
+2021-04-27 19:55:44.046 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xb5c04adf]'
+2021-04-27 19:55:44.070 [nioEventLoopGroup-2-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   App Socket Server started on port 7002.                           *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+2021-04-27 19:55:44.167 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xa2b9b7b4]'
+2021-04-27 19:55:44.188 [nioEventLoopGroup-4-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   webScoket Socket Server started on port 7003.                     *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+2021-04-27 19:56:04.232 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 15096 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:56:04.235 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:56:04.713 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.139 seconds (JVM running for 1.624)
+2021-04-27 19:56:05.144 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xba38cb88]'
+2021-04-27 19:56:05.169 [nioEventLoopGroup-2-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   App Socket Server started on port 7002.                          *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+2021-04-27 19:56:05.267 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x3c2144f6]'
+2021-04-27 19:56:05.288 [nioEventLoopGroup-4-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   webScoket Socket Server started on port 7003.                    *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+2021-04-27 19:56:19.458 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 12772 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:56:19.461 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:56:19.952 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.145 seconds (JVM running for 1.741)
+2021-04-27 19:56:20.371 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x42719e90]'
+2021-04-27 19:56:20.395 [nioEventLoopGroup-2-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   App Socket Server started on port 7002.                         *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+2021-04-27 19:56:20.494 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x1a402a77]'
+2021-04-27 19:56:20.514 [nioEventLoopGroup-4-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   webScoket Socket Server started on port 7003.                   *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+2021-04-27 19:57:20.732 [main] INFO  com.sharer.server.ServerLauncher - Starting ServerLauncher using Java 1.8.0_251 on 03OB--MUUZVUBDW with PID 3356 (D:\ideaPreject\sharer\im-server\target\classes started by Administrator in D:\ideaPreject\sharer)
+2021-04-27 19:57:20.735 [main] INFO  com.sharer.server.ServerLauncher - No active profile set, falling back to default profiles: default
+2021-04-27 19:57:21.208 [main] INFO  com.sharer.server.ServerLauncher - Started ServerLauncher in 1.122 seconds (JVM running for 1.611)
+2021-04-27 19:57:21.626 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x369ee602]'
+2021-04-27 19:57:21.650 [nioEventLoopGroup-2-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   App Socket Server started on port 7002.                         *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+2021-04-27 19:57:21.749 [main] WARN  io.netty.bootstrap.ServerBootstrap - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xbd6e8cd4]'
+2021-04-27 19:57:21.769 [nioEventLoopGroup-4-1] INFO  com.sharer.server.core.server.ChatServer - 
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                                   *
+*                                                                                   *
+*                   webScoket Socket Server started on port 7003.                   *
+*                                                                                   *
+*                                                                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
