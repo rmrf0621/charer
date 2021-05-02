@@ -98,6 +98,12 @@ message MessageResp {
 }
 
 message HearBeat {
+  //
+  uint32 seq       = 1;
+
+  string json      = 2;
+  // 时间戳
+  uint64 timestamp = 3;
 
 }
 

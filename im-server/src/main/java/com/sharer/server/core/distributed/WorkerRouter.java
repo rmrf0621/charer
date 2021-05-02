@@ -1,6 +1,6 @@
 package com.sharer.server.core.distributed;
 
-import com.sharer.server.core.IMContanst;
+import com.sharer.common.IMContanst;
 import com.sharer.server.core.proto.RequestProto;
 import com.sharer.server.core.utils.JsonUtils;
 import com.sharer.server.core.utils.ThreadUtil;

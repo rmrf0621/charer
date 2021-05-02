@@ -1,5 +1,7 @@
 package com.sharer.server.core.distributed;
 
+import com.sharer.server.core.handler.ImNodeExceptionHandler;
+import com.sharer.server.core.handler.ImNodeHeartBeatClientHandler;
 import com.sharer.server.core.proto.RequestProto;
 import com.sharer.server.core.utils.JsonUtils;
 import com.sharer.server.core.vo.Notification;
@@ -121,8 +123,8 @@ public class PeerSender {
                                 ch.pipeline().addLast(new ProtobufDecoder(RequestProto.Request.getDefaultInstance()));
                                 ch.pipeline().addLast(new ProtobufVarint32LengthFieldPrepender());
                                 ch.pipeline().addLast(new ProtobufEncoder());
-                                //ch.pipeline().addLast("imNodeHeartBeatClientHandler", new ImNodeHeartBeatClientHandler());
-                                //ch.pipeline().addLast("exceptionHandler", new ImNodeExceptionHandler());
+                                ch.pipeline().addLast("imNodeHeartBeatClientHandler", new ImNodeHeartBeatClientHandler());
+                                ch.pipeline().addLast("exceptionHandler", new ImNodeExceptionHandler());
                             }
                         }
                 );

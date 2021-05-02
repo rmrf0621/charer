@@ -27,29 +27,16 @@ public class ChatRedirectProcesser implements ServerProcesser {
         // int platform = messageRequest.getPlatform();
         // 分布式的
         List<ServerSession> toSessions = SessionManager.instance().getSessionsBy(to);
-        //List<ServerSession> toSessions = getSession(to);// SessionManager.instance()
         if (toSessions == null) {
             //接收方离线
             log.info("[" + to + "] 不在线，需要保存为离线消息，请保存到nosql如mongo中!");
         } else {
-
             toSessions.forEach((session) ->
             {
                 // 将IM消息发送到接收方
                 session.writeAndFlush(proto);
-
             });
         }
-        return null;
-    }
-
-    /**
-     * 返回多个客户端的session
-     * 获取当前用户的session
-     * @param account
-     * @return
-     */
-    public List<ServerSession> getSession(String account) {
         return null;
     }
 }

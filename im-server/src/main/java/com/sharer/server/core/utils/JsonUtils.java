@@ -1,6 +1,7 @@
 package com.sharer.server.core.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.AnnotationIntrospector;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sharer.server.core.distributed.ImNode;
 
@@ -34,6 +35,15 @@ public class JsonUtils<T> {
     public static <T> T bytes2Object(byte[] b, Class<T> clazz) {
         try {
             return mapper.readValue(b, clazz);
+        } catch (Exception e) {
+            e.getStackTrace();
+            return null;
+        }
+    }
+
+    public static  <T> T json2Object(String json, Class<T> clazz) {
+        try {
+            return mapper.readValue(json, clazz);
         } catch (Exception e) {
             e.getStackTrace();
             return null;

@@ -37,20 +37,13 @@ public class MessageRequestHandler extends ChannelInboundHandlerAdapter {
             return;
         }
 
-
         // 消息体
         RequestProto.Message message = request.getMessage();
         SessionManager sessionManager = SessionManager.instance();
-
-
         // 1,是否存在这个用户,存在就直接从sessionManager拿到对应的channel,发送消息
-
         // 2,不存在的话,查询redis缓存,查看是否有在其他集群上登录,有登录就发送消息到对应的服务器上,对应的服务器在发送给具体的用户
-
         // 3,如果缓存里面没有查询到,直接写入离线离线消息存储(写入会比较耗时)
-
         // 4,响应用户的请求
-
         FutureTaskScheduler.add(() -> {
             // 拿到当前管道里的用户基本消息
             LocalSession session = LocalSession.getSession(ctx);

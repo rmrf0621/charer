@@ -2,29 +2,55 @@ package com.sharer.server.core.service.impl;
 
 
 import com.sharer.server.core.service.UserCacheService;
+import com.sharer.server.core.utils.JsonUtils;
 import com.sharer.server.core.vo.SessionCache;
 import com.sharer.server.core.vo.UserCache;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * create by 尼恩 @ 疯狂创客圈
  **/
-@Repository("UserCacheRedisImpl")
-public class UserCacheRedisImpl implements UserCacheService
-{
-    @Override
-    public void save(UserCache s) {
+@Service
+public class UserCacheRedisImpl implements UserCacheService {
 
+    public static final String REDIS_PREFIX = "userCache:uid:";
+    @Autowired
+    protected StringRedisTemplate stringRedisTemplate;
+    private static final long CASHE_LONG = 60 * 4;//4小时之后，得重新登录
+
+
+    @Override
+    public void save(UserCache uss) {
+        String key = REDIS_PREFIX + uss.getAccount();
+        String value = JsonUtils.toJSONString(uss);
+        stringRedisTemplate.opsForValue().set(key, value, CASHE_LONG, TimeUnit.MINUTES);
     }
 
     @Override
-    public UserCache get(String userId) {
+    public UserCache get(String account) {
+        String key = REDIS_PREFIX + account;
+        String value = (String) stringRedisTemplate.opsForValue().get(key);
+
+        if (!StringUtils.isEmpty(value)) {
+            return JsonUtils.json2Object(value, UserCache.class);
+        }
         return null;
     }
 
     @Override
-    public void addSession(String uid, SessionCache session) {
+    public void addSession(String account, SessionCache session) {
+        UserCache us = get(account);
+        if (null == us) {
+            us = new UserCache(account);
+        }
 
+        us.addSession(session);
+        save(us);
     }
 
     @Override

@@ -14,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ClientTest {
 
-
     public static void main(String[] args) {
         try {
             EventLoopGroup worker = new NioEventLoopGroup();
@@ -38,6 +37,24 @@ public class ClientTest {
             e.printStackTrace();
         }
     }
+
+    public static RequestProto.Request createReq(int index) {
+        RequestProto.Request.Builder builders = RequestProto.Request.newBuilder();
+
+        RequestProto.Message.Builder message = RequestProto.Message.newBuilder();
+        message.setId(10000 + index);
+        message.setContent("我也不知道该说些什么");
+        message.setCategory(2);
+        message.setFrom("2");
+        message.setTo("3");
+        message.setState(1);
+        message.setIsread(1);
+        message.setTime(System.currentTimeMillis());
+
+        builders.setMessage(message);
+        builders.setCategory(RequestProto.Request.Category.Message);
+        return builders.build();
+    }
 }
 
 class HelloClientIntHandler extends ChannelInboundHandlerAdapter {
@@ -50,10 +67,10 @@ class HelloClientIntHandler extends ChannelInboundHandlerAdapter {
         RequestProto.Request.Builder builders = RequestProto.Request.newBuilder();
 
         RequestProto.Login.Builder login = RequestProto.Login.newBuilder();
-        login.setAccount("100000");
-        login.setClientVersion("ios");
-        login.setToken("11111QAZ32WQESAD53RGTEFVD");
-        login.setDeviceModel("1");
+        login.setAccount("charlie");
+        login.setClientVersion("1");
+        login.setToken("E10ADC3949BA59ABBE56E057F20F883E");
+        login.setDeviceModel("android");
         login.setId(System.currentTimeMillis());
         login.setState(1);
         login.setTimestamp(System.currentTimeMillis());
@@ -61,21 +78,11 @@ class HelloClientIntHandler extends ChannelInboundHandlerAdapter {
         builders.setCategory(RequestProto.Request.Category.Login);
         builders.setLogin(login);
         ctx.writeAndFlush(builders);
-
-//        int i = 0;
-//        while (i < 2) {
-//            TimeUnit.SECONDS.sleep(1);
-//            System.out.println("=====================123123123========================");
-//            ctx.writeAndFlush(createReq(1));
-//            i++;
-//        }
-
     }
 
 
     public RequestProto.Request createReq(int index) {
         RequestProto.Request.Builder builders = RequestProto.Request.newBuilder();
-
 
         RequestProto.Message.Builder message = RequestProto.Message.newBuilder();
         message.setId(10000 + index);
@@ -97,6 +104,7 @@ class HelloClientIntHandler extends ChannelInboundHandlerAdapter {
         System.out.println("=====================读取服务端消息========================");
         RequestProto.Request request = (RequestProto.Request) msg;
         System.out.println(request.toString());
+        ctx.channel().writeAndFlush(createReq(1));
         System.out.println("=====================读取服务端消息========================");
     }
 }

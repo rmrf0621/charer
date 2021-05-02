@@ -24,7 +24,7 @@
     </properties>
 
     <dependencies>
-        
+
         <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
         <dependency>
             <groupId>io.netty</groupId>
@@ -80,6 +80,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>${redis.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sharer.im</groupId>
+            <artifactId>sharer-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
     </dependencies>

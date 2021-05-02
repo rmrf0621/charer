@@ -1,6 +1,6 @@
 package com.sharer.server.core.distributed;
 
-import com.sharer.server.core.IMContanst;
+import com.sharer.common.IMContanst;
 import com.sharer.server.core.zk.CuratorZKclient;
 import lombok.Data;
 import org.apache.curator.framework.CuratorFramework;

@@ -1,9 +1,8 @@
 package com.sharer.server.core.session;
 
-import com.sharer.server.core.IMContanst;
+import com.sharer.server.core.proto.RequestProto;
 import com.sharer.server.core.utils.JsonUtils;
 import com.sharer.server.core.vo.UserVo;
-import com.sharer.server.core.proto.RequestProto;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -31,6 +30,8 @@ public class LocalSession implements ServerSession {
     public static final AttributeKey<String> KEY_USER_ID = AttributeKey.valueOf("key_user_id");
 
     public static final AttributeKey<LocalSession> SESSION_KEY = AttributeKey.valueOf("SESSION_KEY");
+
+    public static final AttributeKey<String> CHANNEL_NAME = AttributeKey.valueOf("CHANNEL_NAME");
 
     public LocalSession(Channel channel) {
         this.channel = channel;
@@ -85,7 +86,7 @@ public class LocalSession implements ServerSession {
     }
 
     public void setUser(UserVo vo) {
-        userVo.setSessionId(sessionId);
+        vo.setSessionId(sessionId);
         this.userVo = vo;
     }
 
@@ -95,7 +96,7 @@ public class LocalSession implements ServerSession {
     public LocalSession bind() {
         log.info(" LocalSession 绑定会话 " + channel.remoteAddress());
         channel.attr(LocalSession.SESSION_KEY).set(this);
-        channel.attr(IMContanst.CHANNEL_NAME).set(JsonUtils.toJSONString(userVo));
+        channel.attr(CHANNEL_NAME).set(JsonUtils.toJSONString(userVo));
         isLogin = true;
         return this;
     }

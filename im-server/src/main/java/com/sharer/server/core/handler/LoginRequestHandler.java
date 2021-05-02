@@ -35,43 +35,23 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
             super.channelRead(ctx, msg);
             return;
         }
-
         // 登录session封装
         LocalSession localSession = new LocalSession(ctx.channel());
-
-        // 具体的登录逻辑,登录成功后,存储管道
-        // SessionManager.instance().put("" + request.getLogin().getAccount(), localSession);
-        // boolean isLogin = loginProcesser.action(localSession, request);
-
-        //log.info(",,,,,,,{}", ctx.channel().id().asLongText());
-
-        //log.info("============,{}", request.toString());
-
-        //ctx.channel().writeAndFlush(handlerLoginRespone(request.getLogin()));
-//        if (isLogin) {
-//            ctx.executor().execute(() -> {
-//                ctx.channel().pipeline().remove(LoginRequestHandler.this);
-//            });
-//        }
-
         CallbackTaskScheduler.add(new CallbackTask<Boolean>() {
             @Override
             public Boolean execute() throws Exception {
                 return loginProcesser.action(localSession, request);
             }
-
             @Override
             public void onBack(Boolean r) {
                 if (r) {
                     ctx.pipeline().remove(LoginRequestHandler.this);
                     log.info("登录成功:" + localSession.getUserVo());
-
                 } else {
                     SessionManager.instance().closeSession(ctx);
                     log.info("登录失败:" + localSession.getUserVo());
                 }
             }
-
             @Override
             public void onException(Throwable t) {
                 t.printStackTrace();

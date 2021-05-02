@@ -1,11 +1,11 @@
-import com.sharer.server.core.IMContanst;
+
+import com.sharer.common.IMContanst;
 import com.sharer.server.core.distributed.ImNode;
 import com.sharer.server.core.utils.JsonUtils;
 import com.sharer.server.core.zk.CuratorZKclient;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.zookeeper.CreateMode;
 
-import java.io.UnsupportedEncodingException;
 import java.util.concurrent.TimeUnit;
 
 public class ZkClientTest {

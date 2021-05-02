@@ -1,6 +1,5 @@
-package com.sharer.server.core;
+package com.sharer.common;
 
-import io.netty.util.AttributeKey;
 
 public class IMContanst {
 
@@ -12,14 +11,11 @@ public class IMContanst {
     /**
      * token前缀
      */
-    public static final String TOKEN_HEADER = "token:"+ACCOUNT+":"+DEVICE_MODEL;
+    public static final String TOKEN_HEADER = "imtoken:"+ACCOUNT+":"+DEVICE_MODEL;
 
     public static final Integer LOGIN_SUCCESS = 100;
 
     public static final Integer LOGIN_FAIL = 500;
-
-
-    public static final AttributeKey<String> CHANNEL_NAME = AttributeKey.valueOf("CHANNEL_NAME");
 
     //工作节点的父路径
     public static final String MANAGE_PATH = "/im/nodes";
@@ -31,4 +27,5 @@ public class IMContanst {
 
     //统计用户数的znode
     public static final String COUNTER_PATH = "/im/OnlineCounter";
+
 }

@@ -2,18 +2,32 @@ package com.sharer.server.core.service.impl;
 
 
 import com.sharer.server.core.service.SessionCacheService;
+import com.sharer.server.core.utils.JsonUtils;
 import com.sharer.server.core.vo.SessionCache;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * create by 尼恩 @ 疯狂创客圈
  **/
-@Repository("SessionCacheRedisImpl")
+@Service
 public class SessionCacheRedisImpl implements SessionCacheService
 {
-    @Override
-    public void save(SessionCache s) {
 
+    public static final String REDIS_PREFIX = "sessionCache:id:";
+    @Autowired
+    protected StringRedisTemplate stringRedisTemplate;
+    private static final long CASHE_LONG = 60 * 4;//4小时之后，得重新登录
+
+    @Override
+    public void save(SessionCache sessionCache) {
+        String key = REDIS_PREFIX + sessionCache.getSessionId();
+        String value = JsonUtils.toJSONString(sessionCache);
+        stringRedisTemplate.opsForValue().set(key, value, CASHE_LONG, TimeUnit.MINUTES);
     }
 
     @Override

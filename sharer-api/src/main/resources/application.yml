@@ -1,14 +1,6 @@
-sharer:
-  ip: 127.0.0.1
-  port: 7002
-  webport: 7003
+server:
+  port: 9000
 spring:
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration
-  main:
-    allow-bean-definition-overriding: true
-    web-application-type: none
   redis:
     blockWhenExhausted: true
     database: 0
@@ -26,9 +18,3 @@ spring:
     timeBetweenEvictionRunsMillis: 30000
     connTimeout: 6000
     readTimeout: 6000
-zookeeper:
-  connect:
-    url: localhost:2181
-    sessionTimeout: 600000
-#logging:
-#  config: classpath:logback-spring.xml

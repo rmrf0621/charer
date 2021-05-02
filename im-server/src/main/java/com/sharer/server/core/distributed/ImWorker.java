@@ -1,6 +1,6 @@
 package com.sharer.server.core.distributed;
 
-import com.sharer.server.core.IMContanst;
+import com.sharer.common.IMContanst;
 import com.sharer.server.core.utils.JsonUtils;
 import com.sharer.server.core.zk.CuratorZKclient;
 import lombok.Data;
@@ -108,7 +108,7 @@ public class ImWorker {
             throw new RuntimeException("节点路径有误");
         }
         int index = path.lastIndexOf(IMContanst.PATH_PREFIX);
-        if (index >= 0) {
+        if (index >= 0 && (path.length() - IMContanst.PATH_PREFIX.length() > 0)) {
             index += IMContanst.PATH_PREFIX.length();
             sid = index <= path.length() ? path.substring(index) : null;
         }

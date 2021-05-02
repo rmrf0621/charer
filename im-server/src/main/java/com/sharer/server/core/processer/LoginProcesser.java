@@ -1,7 +1,6 @@
 package com.sharer.server.core.processer;
 
-import com.sharer.server.core.IMContanst;
-import com.sharer.server.core.utils.RedisCash;
+import com.sharer.common.IMContanst;
 import com.sharer.server.core.vo.UserVo;
 import com.sharer.server.core.proto.RequestProto;
 import com.sharer.server.core.session.LocalSession;
@@ -9,14 +8,16 @@ import com.sharer.server.core.session.SessionManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Slf4j
-@Service
+@Service("LoginProcesser")
 public class LoginProcesser extends AbstractServerProcesser {
 
     @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+    private StringRedisTemplate redisTemplate;
 
     @Override
     public RequestProto.Request.Category op() {
@@ -28,16 +29,17 @@ public class LoginProcesser extends AbstractServerProcesser {
         // 验证token
         RequestProto.Login login = proto.getLogin();
         // redis 认证
-        String tokenCash = redisTemplate.opsForValue().get(IMContanst.TOKEN_HEADER.replace(IMContanst.ACCOUNT, login.getAccount()).replace(IMContanst.DEVICE_MODEL, login.getDeviceModel()));
-        if (tokenCash == null || tokenCash == "") {
+        String key = IMContanst.TOKEN_HEADER.replace(IMContanst.ACCOUNT, login.getAccount()).replace(IMContanst.DEVICE_MODEL, login.getDeviceModel());
+        String imtoken = (String)redisTemplate.opsForValue().get(key);
+        if (imtoken == null || imtoken == "") {
             session.responseAndCloese(handlerLoginRespone(IMContanst.LOGIN_FAIL, login.getAccount()));
             log.info("当前用户:{},设备类型:{},未登录", login.getAccount(), login.getDeviceModel());
             return false;
         }
         // 判断用户登录的token是否一致
-        if (!tokenCash.equals(login.getToken())) {
+        if (!imtoken.equals(login.getToken())) {
             // api服务接口登录的时候,每一次都要清理掉token,同一类型客户端登录,要挤掉之前的登录
-            log.info("token不一致,当前用户:{},设备类型:{},token:{},cashToken:{}", login.getAccount(), login.getDeviceModel(), login.getToken(), tokenCash);
+            log.info("token不一致,当前用户:{},设备类型:{},token:{},cashToken:{}", login.getAccount(), login.getDeviceModel(), login.getToken(), imtoken);
             session.responseAndCloese(handlerLoginRespone(IMContanst.LOGIN_FAIL, login.getAccount()));
             return false;
         }
@@ -48,7 +50,7 @@ public class LoginProcesser extends AbstractServerProcesser {
         session.setUser(new UserVo(login));
         session.bind();
         // 保存用户管道信息
-        SessionManager.instance().put(session.getSessionId(), session);
+        SessionManager.instance().addSession(session);
 
         return true;
     }
