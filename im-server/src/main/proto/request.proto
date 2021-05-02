@@ -24,9 +24,8 @@ message Request {
     Login        login        = 2;
     LoginResp    loginResp    = 3;
     Message      message      = 4;
-    MessageResp  messageResp  = 5;
+    Notification notification = 5;
     HearBeat     hearbeat     = 6;
-    HearBeatResp hearBeatResp = 7;
   }
 }
 
@@ -93,8 +92,11 @@ message Message {
 
 }
 
-message MessageResp {
-
+message Notification {
+  uint32 type      = 1;
+  bytes  sender    = 2;
+  string json      = 3;
+  string timestamp = 4;
 }
 
 message HearBeat {
@@ -107,7 +109,4 @@ message HearBeat {
 
 }
 
-message HearBeatResp {
-
-}
 

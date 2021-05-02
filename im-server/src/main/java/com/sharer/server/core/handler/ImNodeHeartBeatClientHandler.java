@@ -20,7 +20,7 @@ public class ImNodeHeartBeatClientHandler extends ChannelInboundHandlerAdapter {
     int seq = 0;
 
     //心跳的时间间隔，单位为s
-    private static final int HEARTBEAT_INTERVAL = 50;
+    private static final int HEARTBEAT_INTERVAL = 60;
 
     public RequestProto.Request buildMessageHeartBeat() {
         if (null == from) {
