@@ -29,7 +29,7 @@ public class LoginProcesser extends AbstractServerProcesser {
         // 验证token
         RequestProto.Login login = proto.getLogin();
         // redis 认证
-        String key = IMContanst.TOKEN_HEADER.replace(IMContanst.ACCOUNT, login.getAccount()).replace(IMContanst.DEVICE_MODEL, login.getDeviceModel());
+        String key = IMContanst.TOKEN_HEADER.replace(IMContanst.ACCOUNT, login.getAccount()).replace(IMContanst.DEVICE_MODEL,login.getDeviceModel());
         String imtoken = (String)redisTemplate.opsForValue().get(key);
         if (imtoken == null || imtoken == "") {
             session.responseAndCloese(handlerLoginRespone(IMContanst.LOGIN_FAIL, login.getAccount()));

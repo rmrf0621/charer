@@ -3,6 +3,8 @@ package com.sharer.server.core.session;
 import com.sharer.server.core.distributed.ImNode;
 import com.sharer.server.core.distributed.ImWorker;
 import com.sharer.server.core.distributed.OnlineCounter;
+import com.sharer.server.core.distributed.WorkerRouter;
+import com.sharer.server.core.proto.RequestProto;
 import com.sharer.server.core.service.SessionCacheService;
 import com.sharer.server.core.service.UserCacheService;
 import com.sharer.server.core.utils.JsonUtils;
@@ -133,14 +135,84 @@ public class SessionManager {
 
         session.close();
         //删除本地的会话和远程会话
-        //this.removeSession(session.getSessionId());
+        this.removeSession(session.getSessionId());
 
         /**
          * 通知其他节点 ，用户下线
          */
         //notifyOtherImNodeOffLine(session);
+    }
+
+    /**
+     * 删除session
+     */
+    public void removeSession(String sessionId) {
+        if (!sessionMap.containsKey(sessionId)) return;
+        ServerSession session = sessionMap.get(sessionId);
+        String account = session.getAccount();
+        //减少用户数
+        OnlineCounter.getInst().decrement();
+        log.info("本地session减少：{} 下线了,  在线总数:{} ", account,
+                OnlineCounter.getInst().getCurValue());
+        ImWorker.getInst().decrBalance();
+        //分布式：分布式保存user和所有session，根据 sessionId 删除用户的会话
+        userCacheService.removeSession(account, sessionId);
+
+        //step2:删除缓存session
+        sessionCacheService.remove(sessionId);
+
+        //本地：从会话集合中，删除会话
+        sessionMap.remove(sessionId);
 
     }
 
+    /**
+     * 通知其他节点  有会话下线
+     *
+     * @param session session
+     */
+    private void notifyOtherImNodeOffLine(LocalSession session) {
 
+        if (null == session || session.isValid()) {
+            log.error("session is null or isValid");
+            return;
+        }
+        RequestProto.Request.Builder builder = RequestProto.Request.newBuilder();
+        RequestProto.Notification.Builder notification = RequestProto.Notification.newBuilder();
+        notification.setTimestamp(System.currentTimeMillis());
+        notification.setJson(JsonUtils.toJSONString(session.getSessionId()));
+        notification.setType(RequestProto.NotificationType.SESSION_OFF);
+        notification.setSender(ImWorker.getInst().getLocalNode().getHost());
+        WorkerRouter.getInst().sendNotification(JsonUtils.toJSONString(builder));
+    }
+
+    /**
+     * 通知其他节点  有会话上线
+     *
+     * @param session session
+     */
+    private void notifyOtherImNodeOnLine(LocalSession session) {
+        RequestProto.Request.Builder builder = RequestProto.Request.newBuilder();
+        RequestProto.Notification.Builder notification = RequestProto.Notification.newBuilder();
+        notification.setTimestamp(System.currentTimeMillis());
+        notification.setJson(JsonUtils.toJSONString(session.getSessionId()));
+        notification.setType(RequestProto.NotificationType.SESSION_ON);
+        notification.setSender(ImWorker.getInst().getLocalNode().getHost());
+        WorkerRouter.getInst().sendNotification(JsonUtils.toJSONString(builder));
+    }
+
+    public void removeRemoteSession(String sessionId) {
+        if (!sessionMap.containsKey(sessionId)) {
+            return;
+        }
+        sessionMap.remove(sessionId);
+    }
+
+    public void addRemoteSession(String sessionId) {
+        SessionCache sessionCache = sessionCacheService.get(sessionId);
+        RemoteSession remoteSession = new RemoteSession(sessionCache);
+        if (!sessionMap.containsKey(sessionId)) {
+            sessionMap.put(sessionId, remoteSession);
+        }
+    }
 }

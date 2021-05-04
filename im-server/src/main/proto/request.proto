@@ -15,6 +15,7 @@ message Request {
     MessageResp  = 3; // 消息响应
     HearBeat     = 4; // 心跳检测
     HearBeatResp = 5; // 心跳检测响应
+    Notification = 6; // 用户上下线通知
   }
 
   // 消息类型
@@ -29,11 +30,11 @@ message Request {
   }
 }
 
-enum DeviceModel {
-  IOS     = 0;
-  ANDROID = 1;
-  WEB     = 2;
-}
+//enum DeviceModel {
+//  IOS     = 0;
+//  ANDROID = 1;
+//  WEB     = 2;
+//}
 
 enum MsgType {
   TEXT    = 0;
@@ -42,23 +43,28 @@ enum MsgType {
   VIDEO   = 3;
 }
 
+enum NotificationType {
+  SESSION_OFF = 0;
+  SESSION_ON  = 1;
+}
+
 message Login {
   // 唯一标识
-  uint64      id            = 1;
+  uint64 id            = 1;
   // 账号
-  string      account       = 2;
+  string account       = 2;
   // token
-  string      token         = 3;
+  string token         = 3;
   // 时间戳
-  uint64      timestamp     = 4;
+  uint64 timestamp     = 4;
   // 设备类型
-  DeviceModel deviceModel   = 5;
+  string deviceModel   = 5;
   // 客户端版本
-  string      clientVersion = 6;
+  string clientVersion = 6;
 
-  string      systemVersion = 7;
+  string systemVersion = 7;
   // 状态
-  uint32      state         = 8;
+  uint32 state         = 8;
 }
 
 message LoginResp {
@@ -93,10 +99,10 @@ message Message {
 }
 
 message Notification {
-  uint32 type      = 1;
-  bytes  sender    = 2;
-  string json      = 3;
-  string timestamp = 4;
+  NotificationType type      = 1;
+  string           sender    = 2;
+  string           json      = 3;
+  uint64           timestamp = 4;
 }
 
 message HearBeat {

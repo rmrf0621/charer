@@ -101,6 +101,13 @@ public class LocalSession implements ServerSession {
         return this;
     }
 
+    public LocalSession unbind() {
+        isLogin = false;
+        SessionManager.instance().removeSession(getSessionId());
+        this.close();
+        return this;
+    }
+
     public boolean isValid() {
         return getUserVo() != null ? true : false;
     }

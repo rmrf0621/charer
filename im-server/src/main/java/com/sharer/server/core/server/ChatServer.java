@@ -3,8 +3,7 @@ package com.sharer.server.core.server;
 import com.sharer.server.core.cocurrent.FutureTaskScheduler;
 import com.sharer.server.core.distributed.ImWorker;
 import com.sharer.server.core.distributed.WorkerRouter;
-import com.sharer.server.core.handler.LoginRequestHandler;
-import com.sharer.server.core.handler.MessageRequestHandler;
+import com.sharer.server.core.handler.*;
 import com.sharer.server.core.proto.RequestProto;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -54,6 +53,12 @@ public class ChatServer {
 
     @Autowired
     private MessageRequestHandler messageRequestHandler;
+
+    @Autowired
+    private RemoteNotificationHandler remoteNotificationHandler;
+
+    @Autowired
+    private ServerExceptionHandler serverExceptionHandler;
 
     /**
      * 读空闲时间(秒)
@@ -116,11 +121,11 @@ public class ChatServer {
         pipeline.addLast(new ProtobufEncoder());
         pipeline.addLast(new LoggingHandler(LogLevel.INFO));
         pipeline.addLast(new IdleStateHandler(READ_IDLE_TIME, WRITE_IDLE_TIME, 0));
+        pipeline.addLast("heartBeat", new HeartBeatServerHandler());
         pipeline.addLast("loginRequestHandler",loginRequestHandler);
         pipeline.addLast("messageRequestHandler",messageRequestHandler);
-        //pipeline.addLast("demoHandler",new DemoHandler());
-        //pipeline.addLast(new LoggingHandler(LogLevel.INFO));
-        //pipeline.addLast(new IdleStateHandler(30, 30, 0));
+        pipeline.addLast("remoteNotificationHandler", remoteNotificationHandler);
+        pipeline.addLast("serverException", serverExceptionHandler);
     }
 
     /**

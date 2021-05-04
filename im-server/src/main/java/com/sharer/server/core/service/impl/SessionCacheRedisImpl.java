@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,8 +16,7 @@ import java.util.concurrent.TimeUnit;
  * create by 尼恩 @ 疯狂创客圈
  **/
 @Service
-public class SessionCacheRedisImpl implements SessionCacheService
-{
+public class SessionCacheRedisImpl implements SessionCacheService {
 
     public static final String REDIS_PREFIX = "sessionCache:id:";
     @Autowired
@@ -32,12 +32,19 @@ public class SessionCacheRedisImpl implements SessionCacheService
 
     @Override
     public SessionCache get(String sessionId) {
+        String key = REDIS_PREFIX + sessionId;
+        String value = (String) stringRedisTemplate.opsForValue().get(key);
+
+        if (!StringUtils.isEmpty(value)) {
+            return JsonUtils.json2Object(value, SessionCache.class);
+        }
         return null;
     }
 
     @Override
     public void remove(String sessionId) {
-
+        String key = REDIS_PREFIX + sessionId;
+        stringRedisTemplate.delete(key);
     }
 
 //    public static final String REDIS_PREFIX = "SessionCache:id:";

@@ -44,7 +44,7 @@ public class ClientTest {
         RequestProto.Message.Builder message = RequestProto.Message.newBuilder();
         message.setId(10000 + index);
         message.setContent("我也不知道该说些什么");
-        message.setCategory(2);
+        message.setMsgType(RequestProto.MsgType.TEXT);
         message.setFrom("2");
         message.setTo("3");
         message.setState(1);
@@ -87,7 +87,7 @@ class HelloClientIntHandler extends ChannelInboundHandlerAdapter {
         RequestProto.Message.Builder message = RequestProto.Message.newBuilder();
         message.setId(10000 + index);
         message.setContent("我也不知道该说些什么");
-        message.setCategory(2);
+        message.setMsgType(RequestProto.MsgType.TEXT);
         message.setFrom("2");
         message.setTo("3");
         message.setState(1);

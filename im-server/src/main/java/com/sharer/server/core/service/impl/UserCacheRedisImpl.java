@@ -55,7 +55,13 @@ public class UserCacheRedisImpl implements UserCacheService {
 
     @Override
     public void removeSession(String uid, String sessionId) {
-
+        UserCache us = get(uid);
+        if (null == us)
+        {
+            us = new UserCache(uid);
+        }
+        us.removeSession(sessionId);
+        save(us);
     }
 
 //    public static final String REDIS_PREFIX = "UserCache:uid:";

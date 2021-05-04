@@ -15,123 +15,6 @@ public final class RequestProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code DeviceModel}
-   */
-  public enum DeviceModel
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>IOS = 0;</code>
-     */
-    IOS(0),
-    /**
-     * <code>ANDROID = 1;</code>
-     */
-    ANDROID(1),
-    /**
-     * <code>WEB = 2;</code>
-     */
-    WEB(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>IOS = 0;</code>
-     */
-    public static final int IOS_VALUE = 0;
-    /**
-     * <code>ANDROID = 1;</code>
-     */
-    public static final int ANDROID_VALUE = 1;
-    /**
-     * <code>WEB = 2;</code>
-     */
-    public static final int WEB_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static DeviceModel valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static DeviceModel forNumber(int value) {
-      switch (value) {
-        case 0: return IOS;
-        case 1: return ANDROID;
-        case 2: return WEB;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<DeviceModel>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        DeviceModel> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<DeviceModel>() {
-            public DeviceModel findValueByNumber(int number) {
-              return DeviceModel.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.sharer.server.core.proto.RequestProto.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final DeviceModel[] VALUES = values();
-
-    public static DeviceModel valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private DeviceModel(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:DeviceModel)
-  }
-
-  /**
    * Protobuf enum {@code MsgType}
    */
   public enum MsgType
@@ -231,7 +114,7 @@ public final class RequestProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.sharer.server.core.proto.RequestProto.getDescriptor().getEnumTypes().get(1);
+      return com.sharer.server.core.proto.RequestProto.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final MsgType[] VALUES = values();
@@ -255,6 +138,114 @@ public final class RequestProto {
     }
 
     // @@protoc_insertion_point(enum_scope:MsgType)
+  }
+
+  /**
+   * Protobuf enum {@code NotificationType}
+   */
+  public enum NotificationType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SESSION_OFF = 0;</code>
+     */
+    SESSION_OFF(0),
+    /**
+     * <code>SESSION_ON = 1;</code>
+     */
+    SESSION_ON(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>SESSION_OFF = 0;</code>
+     */
+    public static final int SESSION_OFF_VALUE = 0;
+    /**
+     * <code>SESSION_ON = 1;</code>
+     */
+    public static final int SESSION_ON_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static NotificationType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static NotificationType forNumber(int value) {
+      switch (value) {
+        case 0: return SESSION_OFF;
+        case 1: return SESSION_ON;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<NotificationType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        NotificationType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<NotificationType>() {
+            public NotificationType findValueByNumber(int number) {
+              return NotificationType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.sharer.server.core.proto.RequestProto.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final NotificationType[] VALUES = values();
+
+    public static NotificationType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private NotificationType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:NotificationType)
   }
 
   public interface RequestOrBuilder extends
@@ -326,19 +317,19 @@ public final class RequestProto {
     com.sharer.server.core.proto.RequestProto.MessageOrBuilder getMessageOrBuilder();
 
     /**
-     * <code>.MessageResp messageResp = 5;</code>
-     * @return Whether the messageResp field is set.
+     * <code>.Notification notification = 5;</code>
+     * @return Whether the notification field is set.
      */
-    boolean hasMessageResp();
+    boolean hasNotification();
     /**
-     * <code>.MessageResp messageResp = 5;</code>
-     * @return The messageResp.
+     * <code>.Notification notification = 5;</code>
+     * @return The notification.
      */
-    com.sharer.server.core.proto.RequestProto.MessageResp getMessageResp();
+    com.sharer.server.core.proto.RequestProto.Notification getNotification();
     /**
-     * <code>.MessageResp messageResp = 5;</code>
+     * <code>.Notification notification = 5;</code>
      */
-    com.sharer.server.core.proto.RequestProto.MessageRespOrBuilder getMessageRespOrBuilder();
+    com.sharer.server.core.proto.RequestProto.NotificationOrBuilder getNotificationOrBuilder();
 
     /**
      * <code>.HearBeat hearbeat = 6;</code>
@@ -354,21 +345,6 @@ public final class RequestProto {
      * <code>.HearBeat hearbeat = 6;</code>
      */
     com.sharer.server.core.proto.RequestProto.HearBeatOrBuilder getHearbeatOrBuilder();
-
-    /**
-     * <code>.HearBeatResp hearBeatResp = 7;</code>
-     * @return Whether the hearBeatResp field is set.
-     */
-    boolean hasHearBeatResp();
-    /**
-     * <code>.HearBeatResp hearBeatResp = 7;</code>
-     * @return The hearBeatResp.
-     */
-    com.sharer.server.core.proto.RequestProto.HearBeatResp getHearBeatResp();
-    /**
-     * <code>.HearBeatResp hearBeatResp = 7;</code>
-     */
-    com.sharer.server.core.proto.RequestProto.HearBeatRespOrBuilder getHearBeatRespOrBuilder();
 
     public com.sharer.server.core.proto.RequestProto.Request.DataBodyCase getDataBodyCase();
   }
@@ -471,14 +447,14 @@ public final class RequestProto {
               break;
             }
             case 42: {
-              com.sharer.server.core.proto.RequestProto.MessageResp.Builder subBuilder = null;
+              com.sharer.server.core.proto.RequestProto.Notification.Builder subBuilder = null;
               if (dataBodyCase_ == 5) {
-                subBuilder = ((com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_).toBuilder();
+                subBuilder = ((com.sharer.server.core.proto.RequestProto.Notification) dataBody_).toBuilder();
               }
               dataBody_ =
-                  input.readMessage(com.sharer.server.core.proto.RequestProto.MessageResp.parser(), extensionRegistry);
+                  input.readMessage(com.sharer.server.core.proto.RequestProto.Notification.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_);
+                subBuilder.mergeFrom((com.sharer.server.core.proto.RequestProto.Notification) dataBody_);
                 dataBody_ = subBuilder.buildPartial();
               }
               dataBodyCase_ = 5;
@@ -496,20 +472,6 @@ public final class RequestProto {
                 dataBody_ = subBuilder.buildPartial();
               }
               dataBodyCase_ = 6;
-              break;
-            }
-            case 58: {
-              com.sharer.server.core.proto.RequestProto.HearBeatResp.Builder subBuilder = null;
-              if (dataBodyCase_ == 7) {
-                subBuilder = ((com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_).toBuilder();
-              }
-              dataBody_ =
-                  input.readMessage(com.sharer.server.core.proto.RequestProto.HearBeatResp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_);
-                dataBody_ = subBuilder.buildPartial();
-              }
-              dataBodyCase_ = 7;
               break;
             }
             default: {
@@ -597,6 +559,14 @@ public final class RequestProto {
        * <code>HearBeatResp = 5;</code>
        */
       HearBeatResp(5),
+      /**
+       * <pre>
+       * 用户上下线通知
+       * </pre>
+       *
+       * <code>Notification = 6;</code>
+       */
+      Notification(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -648,6 +618,14 @@ public final class RequestProto {
        * <code>HearBeatResp = 5;</code>
        */
       public static final int HearBeatResp_VALUE = 5;
+      /**
+       * <pre>
+       * 用户上下线通知
+       * </pre>
+       *
+       * <code>Notification = 6;</code>
+       */
+      public static final int Notification_VALUE = 6;
 
 
       public final int getNumber() {
@@ -680,6 +658,7 @@ public final class RequestProto {
           case 3: return MessageResp;
           case 4: return HearBeat;
           case 5: return HearBeatResp;
+          case 6: return Notification;
           default: return null;
         }
       }
@@ -744,9 +723,8 @@ public final class RequestProto {
       LOGIN(2),
       LOGINRESP(3),
       MESSAGE(4),
-      MESSAGERESP(5),
+      NOTIFICATION(5),
       HEARBEAT(6),
-      HEARBEATRESP(7),
       DATABODY_NOT_SET(0);
       private final int value;
       private DataBodyCase(int value) {
@@ -767,9 +745,8 @@ public final class RequestProto {
           case 2: return LOGIN;
           case 3: return LOGINRESP;
           case 4: return MESSAGE;
-          case 5: return MESSAGERESP;
+          case 5: return NOTIFICATION;
           case 6: return HEARBEAT;
-          case 7: return HEARBEATRESP;
           case 0: return DATABODY_NOT_SET;
           default: return null;
         }
@@ -905,35 +882,35 @@ public final class RequestProto {
       return com.sharer.server.core.proto.RequestProto.Message.getDefaultInstance();
     }
 
-    public static final int MESSAGERESP_FIELD_NUMBER = 5;
+    public static final int NOTIFICATION_FIELD_NUMBER = 5;
     /**
-     * <code>.MessageResp messageResp = 5;</code>
-     * @return Whether the messageResp field is set.
+     * <code>.Notification notification = 5;</code>
+     * @return Whether the notification field is set.
      */
     @java.lang.Override
-    public boolean hasMessageResp() {
+    public boolean hasNotification() {
       return dataBodyCase_ == 5;
     }
     /**
-     * <code>.MessageResp messageResp = 5;</code>
-     * @return The messageResp.
+     * <code>.Notification notification = 5;</code>
+     * @return The notification.
      */
     @java.lang.Override
-    public com.sharer.server.core.proto.RequestProto.MessageResp getMessageResp() {
+    public com.sharer.server.core.proto.RequestProto.Notification getNotification() {
       if (dataBodyCase_ == 5) {
-         return (com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_;
+         return (com.sharer.server.core.proto.RequestProto.Notification) dataBody_;
       }
-      return com.sharer.server.core.proto.RequestProto.MessageResp.getDefaultInstance();
+      return com.sharer.server.core.proto.RequestProto.Notification.getDefaultInstance();
     }
     /**
-     * <code>.MessageResp messageResp = 5;</code>
+     * <code>.Notification notification = 5;</code>
      */
     @java.lang.Override
-    public com.sharer.server.core.proto.RequestProto.MessageRespOrBuilder getMessageRespOrBuilder() {
+    public com.sharer.server.core.proto.RequestProto.NotificationOrBuilder getNotificationOrBuilder() {
       if (dataBodyCase_ == 5) {
-         return (com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_;
+         return (com.sharer.server.core.proto.RequestProto.Notification) dataBody_;
       }
-      return com.sharer.server.core.proto.RequestProto.MessageResp.getDefaultInstance();
+      return com.sharer.server.core.proto.RequestProto.Notification.getDefaultInstance();
     }
 
     public static final int HEARBEAT_FIELD_NUMBER = 6;
@@ -967,37 +944,6 @@ public final class RequestProto {
       return com.sharer.server.core.proto.RequestProto.HearBeat.getDefaultInstance();
     }
 
-    public static final int HEARBEATRESP_FIELD_NUMBER = 7;
-    /**
-     * <code>.HearBeatResp hearBeatResp = 7;</code>
-     * @return Whether the hearBeatResp field is set.
-     */
-    @java.lang.Override
-    public boolean hasHearBeatResp() {
-      return dataBodyCase_ == 7;
-    }
-    /**
-     * <code>.HearBeatResp hearBeatResp = 7;</code>
-     * @return The hearBeatResp.
-     */
-    @java.lang.Override
-    public com.sharer.server.core.proto.RequestProto.HearBeatResp getHearBeatResp() {
-      if (dataBodyCase_ == 7) {
-         return (com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_;
-      }
-      return com.sharer.server.core.proto.RequestProto.HearBeatResp.getDefaultInstance();
-    }
-    /**
-     * <code>.HearBeatResp hearBeatResp = 7;</code>
-     */
-    @java.lang.Override
-    public com.sharer.server.core.proto.RequestProto.HearBeatRespOrBuilder getHearBeatRespOrBuilder() {
-      if (dataBodyCase_ == 7) {
-         return (com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_;
-      }
-      return com.sharer.server.core.proto.RequestProto.HearBeatResp.getDefaultInstance();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1025,13 +971,10 @@ public final class RequestProto {
         output.writeMessage(4, (com.sharer.server.core.proto.RequestProto.Message) dataBody_);
       }
       if (dataBodyCase_ == 5) {
-        output.writeMessage(5, (com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_);
+        output.writeMessage(5, (com.sharer.server.core.proto.RequestProto.Notification) dataBody_);
       }
       if (dataBodyCase_ == 6) {
         output.writeMessage(6, (com.sharer.server.core.proto.RequestProto.HearBeat) dataBody_);
-      }
-      if (dataBodyCase_ == 7) {
-        output.writeMessage(7, (com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_);
       }
       unknownFields.writeTo(output);
     }
@@ -1060,15 +1003,11 @@ public final class RequestProto {
       }
       if (dataBodyCase_ == 5) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, (com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_);
+          .computeMessageSize(5, (com.sharer.server.core.proto.RequestProto.Notification) dataBody_);
       }
       if (dataBodyCase_ == 6) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, (com.sharer.server.core.proto.RequestProto.HearBeat) dataBody_);
-      }
-      if (dataBodyCase_ == 7) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, (com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1101,16 +1040,12 @@ public final class RequestProto {
               .equals(other.getMessage())) return false;
           break;
         case 5:
-          if (!getMessageResp()
-              .equals(other.getMessageResp())) return false;
+          if (!getNotification()
+              .equals(other.getNotification())) return false;
           break;
         case 6:
           if (!getHearbeat()
               .equals(other.getHearbeat())) return false;
-          break;
-        case 7:
-          if (!getHearBeatResp()
-              .equals(other.getHearBeatResp())) return false;
           break;
         case 0:
         default:
@@ -1142,16 +1077,12 @@ public final class RequestProto {
           hash = (53 * hash) + getMessage().hashCode();
           break;
         case 5:
-          hash = (37 * hash) + MESSAGERESP_FIELD_NUMBER;
-          hash = (53 * hash) + getMessageResp().hashCode();
+          hash = (37 * hash) + NOTIFICATION_FIELD_NUMBER;
+          hash = (53 * hash) + getNotification().hashCode();
           break;
         case 6:
           hash = (37 * hash) + HEARBEAT_FIELD_NUMBER;
           hash = (53 * hash) + getHearbeat().hashCode();
-          break;
-        case 7:
-          hash = (37 * hash) + HEARBEATRESP_FIELD_NUMBER;
-          hash = (53 * hash) + getHearBeatResp().hashCode();
           break;
         case 0:
         default:
@@ -1346,10 +1277,10 @@ public final class RequestProto {
           }
         }
         if (dataBodyCase_ == 5) {
-          if (messageRespBuilder_ == null) {
+          if (notificationBuilder_ == null) {
             result.dataBody_ = dataBody_;
           } else {
-            result.dataBody_ = messageRespBuilder_.build();
+            result.dataBody_ = notificationBuilder_.build();
           }
         }
         if (dataBodyCase_ == 6) {
@@ -1357,13 +1288,6 @@ public final class RequestProto {
             result.dataBody_ = dataBody_;
           } else {
             result.dataBody_ = hearbeatBuilder_.build();
-          }
-        }
-        if (dataBodyCase_ == 7) {
-          if (hearBeatRespBuilder_ == null) {
-            result.dataBody_ = dataBody_;
-          } else {
-            result.dataBody_ = hearBeatRespBuilder_.build();
           }
         }
         result.dataBodyCase_ = dataBodyCase_;
@@ -1431,16 +1355,12 @@ public final class RequestProto {
             mergeMessage(other.getMessage());
             break;
           }
-          case MESSAGERESP: {
-            mergeMessageResp(other.getMessageResp());
+          case NOTIFICATION: {
+            mergeNotification(other.getNotification());
             break;
           }
           case HEARBEAT: {
             mergeHearbeat(other.getHearbeat());
-            break;
-          }
-          case HEARBEATRESP: {
-            mergeHearBeatResp(other.getHearBeatResp());
             break;
           }
           case DATABODY_NOT_SET: {
@@ -1989,71 +1909,71 @@ public final class RequestProto {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sharer.server.core.proto.RequestProto.MessageResp, com.sharer.server.core.proto.RequestProto.MessageResp.Builder, com.sharer.server.core.proto.RequestProto.MessageRespOrBuilder> messageRespBuilder_;
+          com.sharer.server.core.proto.RequestProto.Notification, com.sharer.server.core.proto.RequestProto.Notification.Builder, com.sharer.server.core.proto.RequestProto.NotificationOrBuilder> notificationBuilder_;
       /**
-       * <code>.MessageResp messageResp = 5;</code>
-       * @return Whether the messageResp field is set.
+       * <code>.Notification notification = 5;</code>
+       * @return Whether the notification field is set.
        */
       @java.lang.Override
-      public boolean hasMessageResp() {
+      public boolean hasNotification() {
         return dataBodyCase_ == 5;
       }
       /**
-       * <code>.MessageResp messageResp = 5;</code>
-       * @return The messageResp.
+       * <code>.Notification notification = 5;</code>
+       * @return The notification.
        */
       @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.MessageResp getMessageResp() {
-        if (messageRespBuilder_ == null) {
+      public com.sharer.server.core.proto.RequestProto.Notification getNotification() {
+        if (notificationBuilder_ == null) {
           if (dataBodyCase_ == 5) {
-            return (com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_;
+            return (com.sharer.server.core.proto.RequestProto.Notification) dataBody_;
           }
-          return com.sharer.server.core.proto.RequestProto.MessageResp.getDefaultInstance();
+          return com.sharer.server.core.proto.RequestProto.Notification.getDefaultInstance();
         } else {
           if (dataBodyCase_ == 5) {
-            return messageRespBuilder_.getMessage();
+            return notificationBuilder_.getMessage();
           }
-          return com.sharer.server.core.proto.RequestProto.MessageResp.getDefaultInstance();
+          return com.sharer.server.core.proto.RequestProto.Notification.getDefaultInstance();
         }
       }
       /**
-       * <code>.MessageResp messageResp = 5;</code>
+       * <code>.Notification notification = 5;</code>
        */
-      public Builder setMessageResp(com.sharer.server.core.proto.RequestProto.MessageResp value) {
-        if (messageRespBuilder_ == null) {
+      public Builder setNotification(com.sharer.server.core.proto.RequestProto.Notification value) {
+        if (notificationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           dataBody_ = value;
           onChanged();
         } else {
-          messageRespBuilder_.setMessage(value);
+          notificationBuilder_.setMessage(value);
         }
         dataBodyCase_ = 5;
         return this;
       }
       /**
-       * <code>.MessageResp messageResp = 5;</code>
+       * <code>.Notification notification = 5;</code>
        */
-      public Builder setMessageResp(
-          com.sharer.server.core.proto.RequestProto.MessageResp.Builder builderForValue) {
-        if (messageRespBuilder_ == null) {
+      public Builder setNotification(
+          com.sharer.server.core.proto.RequestProto.Notification.Builder builderForValue) {
+        if (notificationBuilder_ == null) {
           dataBody_ = builderForValue.build();
           onChanged();
         } else {
-          messageRespBuilder_.setMessage(builderForValue.build());
+          notificationBuilder_.setMessage(builderForValue.build());
         }
         dataBodyCase_ = 5;
         return this;
       }
       /**
-       * <code>.MessageResp messageResp = 5;</code>
+       * <code>.Notification notification = 5;</code>
        */
-      public Builder mergeMessageResp(com.sharer.server.core.proto.RequestProto.MessageResp value) {
-        if (messageRespBuilder_ == null) {
+      public Builder mergeNotification(com.sharer.server.core.proto.RequestProto.Notification value) {
+        if (notificationBuilder_ == null) {
           if (dataBodyCase_ == 5 &&
-              dataBody_ != com.sharer.server.core.proto.RequestProto.MessageResp.getDefaultInstance()) {
-            dataBody_ = com.sharer.server.core.proto.RequestProto.MessageResp.newBuilder((com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_)
+              dataBody_ != com.sharer.server.core.proto.RequestProto.Notification.getDefaultInstance()) {
+            dataBody_ = com.sharer.server.core.proto.RequestProto.Notification.newBuilder((com.sharer.server.core.proto.RequestProto.Notification) dataBody_)
                 .mergeFrom(value).buildPartial();
           } else {
             dataBody_ = value;
@@ -2061,18 +1981,18 @@ public final class RequestProto {
           onChanged();
         } else {
           if (dataBodyCase_ == 5) {
-            messageRespBuilder_.mergeFrom(value);
+            notificationBuilder_.mergeFrom(value);
           }
-          messageRespBuilder_.setMessage(value);
+          notificationBuilder_.setMessage(value);
         }
         dataBodyCase_ = 5;
         return this;
       }
       /**
-       * <code>.MessageResp messageResp = 5;</code>
+       * <code>.Notification notification = 5;</code>
        */
-      public Builder clearMessageResp() {
-        if (messageRespBuilder_ == null) {
+      public Builder clearNotification() {
+        if (notificationBuilder_ == null) {
           if (dataBodyCase_ == 5) {
             dataBodyCase_ = 0;
             dataBody_ = null;
@@ -2083,50 +2003,50 @@ public final class RequestProto {
             dataBodyCase_ = 0;
             dataBody_ = null;
           }
-          messageRespBuilder_.clear();
+          notificationBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.MessageResp messageResp = 5;</code>
+       * <code>.Notification notification = 5;</code>
        */
-      public com.sharer.server.core.proto.RequestProto.MessageResp.Builder getMessageRespBuilder() {
-        return getMessageRespFieldBuilder().getBuilder();
+      public com.sharer.server.core.proto.RequestProto.Notification.Builder getNotificationBuilder() {
+        return getNotificationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.MessageResp messageResp = 5;</code>
+       * <code>.Notification notification = 5;</code>
        */
       @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.MessageRespOrBuilder getMessageRespOrBuilder() {
-        if ((dataBodyCase_ == 5) && (messageRespBuilder_ != null)) {
-          return messageRespBuilder_.getMessageOrBuilder();
+      public com.sharer.server.core.proto.RequestProto.NotificationOrBuilder getNotificationOrBuilder() {
+        if ((dataBodyCase_ == 5) && (notificationBuilder_ != null)) {
+          return notificationBuilder_.getMessageOrBuilder();
         } else {
           if (dataBodyCase_ == 5) {
-            return (com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_;
+            return (com.sharer.server.core.proto.RequestProto.Notification) dataBody_;
           }
-          return com.sharer.server.core.proto.RequestProto.MessageResp.getDefaultInstance();
+          return com.sharer.server.core.proto.RequestProto.Notification.getDefaultInstance();
         }
       }
       /**
-       * <code>.MessageResp messageResp = 5;</code>
+       * <code>.Notification notification = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.sharer.server.core.proto.RequestProto.MessageResp, com.sharer.server.core.proto.RequestProto.MessageResp.Builder, com.sharer.server.core.proto.RequestProto.MessageRespOrBuilder> 
-          getMessageRespFieldBuilder() {
-        if (messageRespBuilder_ == null) {
+          com.sharer.server.core.proto.RequestProto.Notification, com.sharer.server.core.proto.RequestProto.Notification.Builder, com.sharer.server.core.proto.RequestProto.NotificationOrBuilder> 
+          getNotificationFieldBuilder() {
+        if (notificationBuilder_ == null) {
           if (!(dataBodyCase_ == 5)) {
-            dataBody_ = com.sharer.server.core.proto.RequestProto.MessageResp.getDefaultInstance();
+            dataBody_ = com.sharer.server.core.proto.RequestProto.Notification.getDefaultInstance();
           }
-          messageRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sharer.server.core.proto.RequestProto.MessageResp, com.sharer.server.core.proto.RequestProto.MessageResp.Builder, com.sharer.server.core.proto.RequestProto.MessageRespOrBuilder>(
-                  (com.sharer.server.core.proto.RequestProto.MessageResp) dataBody_,
+          notificationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.sharer.server.core.proto.RequestProto.Notification, com.sharer.server.core.proto.RequestProto.Notification.Builder, com.sharer.server.core.proto.RequestProto.NotificationOrBuilder>(
+                  (com.sharer.server.core.proto.RequestProto.Notification) dataBody_,
                   getParentForChildren(),
                   isClean());
           dataBody_ = null;
         }
         dataBodyCase_ = 5;
         onChanged();;
-        return messageRespBuilder_;
+        return notificationBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2269,147 +2189,6 @@ public final class RequestProto {
         onChanged();;
         return hearbeatBuilder_;
       }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sharer.server.core.proto.RequestProto.HearBeatResp, com.sharer.server.core.proto.RequestProto.HearBeatResp.Builder, com.sharer.server.core.proto.RequestProto.HearBeatRespOrBuilder> hearBeatRespBuilder_;
-      /**
-       * <code>.HearBeatResp hearBeatResp = 7;</code>
-       * @return Whether the hearBeatResp field is set.
-       */
-      @java.lang.Override
-      public boolean hasHearBeatResp() {
-        return dataBodyCase_ == 7;
-      }
-      /**
-       * <code>.HearBeatResp hearBeatResp = 7;</code>
-       * @return The hearBeatResp.
-       */
-      @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.HearBeatResp getHearBeatResp() {
-        if (hearBeatRespBuilder_ == null) {
-          if (dataBodyCase_ == 7) {
-            return (com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_;
-          }
-          return com.sharer.server.core.proto.RequestProto.HearBeatResp.getDefaultInstance();
-        } else {
-          if (dataBodyCase_ == 7) {
-            return hearBeatRespBuilder_.getMessage();
-          }
-          return com.sharer.server.core.proto.RequestProto.HearBeatResp.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.HearBeatResp hearBeatResp = 7;</code>
-       */
-      public Builder setHearBeatResp(com.sharer.server.core.proto.RequestProto.HearBeatResp value) {
-        if (hearBeatRespBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dataBody_ = value;
-          onChanged();
-        } else {
-          hearBeatRespBuilder_.setMessage(value);
-        }
-        dataBodyCase_ = 7;
-        return this;
-      }
-      /**
-       * <code>.HearBeatResp hearBeatResp = 7;</code>
-       */
-      public Builder setHearBeatResp(
-          com.sharer.server.core.proto.RequestProto.HearBeatResp.Builder builderForValue) {
-        if (hearBeatRespBuilder_ == null) {
-          dataBody_ = builderForValue.build();
-          onChanged();
-        } else {
-          hearBeatRespBuilder_.setMessage(builderForValue.build());
-        }
-        dataBodyCase_ = 7;
-        return this;
-      }
-      /**
-       * <code>.HearBeatResp hearBeatResp = 7;</code>
-       */
-      public Builder mergeHearBeatResp(com.sharer.server.core.proto.RequestProto.HearBeatResp value) {
-        if (hearBeatRespBuilder_ == null) {
-          if (dataBodyCase_ == 7 &&
-              dataBody_ != com.sharer.server.core.proto.RequestProto.HearBeatResp.getDefaultInstance()) {
-            dataBody_ = com.sharer.server.core.proto.RequestProto.HearBeatResp.newBuilder((com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            dataBody_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataBodyCase_ == 7) {
-            hearBeatRespBuilder_.mergeFrom(value);
-          }
-          hearBeatRespBuilder_.setMessage(value);
-        }
-        dataBodyCase_ = 7;
-        return this;
-      }
-      /**
-       * <code>.HearBeatResp hearBeatResp = 7;</code>
-       */
-      public Builder clearHearBeatResp() {
-        if (hearBeatRespBuilder_ == null) {
-          if (dataBodyCase_ == 7) {
-            dataBodyCase_ = 0;
-            dataBody_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataBodyCase_ == 7) {
-            dataBodyCase_ = 0;
-            dataBody_ = null;
-          }
-          hearBeatRespBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.HearBeatResp hearBeatResp = 7;</code>
-       */
-      public com.sharer.server.core.proto.RequestProto.HearBeatResp.Builder getHearBeatRespBuilder() {
-        return getHearBeatRespFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.HearBeatResp hearBeatResp = 7;</code>
-       */
-      @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.HearBeatRespOrBuilder getHearBeatRespOrBuilder() {
-        if ((dataBodyCase_ == 7) && (hearBeatRespBuilder_ != null)) {
-          return hearBeatRespBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataBodyCase_ == 7) {
-            return (com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_;
-          }
-          return com.sharer.server.core.proto.RequestProto.HearBeatResp.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.HearBeatResp hearBeatResp = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sharer.server.core.proto.RequestProto.HearBeatResp, com.sharer.server.core.proto.RequestProto.HearBeatResp.Builder, com.sharer.server.core.proto.RequestProto.HearBeatRespOrBuilder> 
-          getHearBeatRespFieldBuilder() {
-        if (hearBeatRespBuilder_ == null) {
-          if (!(dataBodyCase_ == 7)) {
-            dataBody_ = com.sharer.server.core.proto.RequestProto.HearBeatResp.getDefaultInstance();
-          }
-          hearBeatRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sharer.server.core.proto.RequestProto.HearBeatResp, com.sharer.server.core.proto.RequestProto.HearBeatResp.Builder, com.sharer.server.core.proto.RequestProto.HearBeatRespOrBuilder>(
-                  (com.sharer.server.core.proto.RequestProto.HearBeatResp) dataBody_,
-                  getParentForChildren(),
-                  isClean());
-          dataBody_ = null;
-        }
-        dataBodyCase_ = 7;
-        onChanged();;
-        return hearBeatRespBuilder_;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2532,19 +2311,20 @@ public final class RequestProto {
      * 设备类型
      * </pre>
      *
-     * <code>.DeviceModel deviceModel = 5;</code>
-     * @return The enum numeric value on the wire for deviceModel.
+     * <code>string deviceModel = 5;</code>
+     * @return The deviceModel.
      */
-    int getDeviceModelValue();
+    java.lang.String getDeviceModel();
     /**
      * <pre>
      * 设备类型
      * </pre>
      *
-     * <code>.DeviceModel deviceModel = 5;</code>
-     * @return The deviceModel.
+     * <code>string deviceModel = 5;</code>
+     * @return The bytes for deviceModel.
      */
-    com.sharer.server.core.proto.RequestProto.DeviceModel getDeviceModel();
+    com.google.protobuf.ByteString
+        getDeviceModelBytes();
 
     /**
      * <pre>
@@ -2603,7 +2383,7 @@ public final class RequestProto {
     private Login() {
       account_ = "";
       token_ = "";
-      deviceModel_ = 0;
+      deviceModel_ = "";
       clientVersion_ = "";
       systemVersion_ = "";
     }
@@ -2660,10 +2440,10 @@ public final class RequestProto {
               timestamp_ = input.readUInt64();
               break;
             }
-            case 40: {
-              int rawValue = input.readEnum();
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              deviceModel_ = rawValue;
+              deviceModel_ = s;
               break;
             }
             case 50: {
@@ -2838,30 +2618,49 @@ public final class RequestProto {
     }
 
     public static final int DEVICEMODEL_FIELD_NUMBER = 5;
-    private int deviceModel_;
+    private volatile java.lang.Object deviceModel_;
     /**
      * <pre>
      * 设备类型
      * </pre>
      *
-     * <code>.DeviceModel deviceModel = 5;</code>
-     * @return The enum numeric value on the wire for deviceModel.
+     * <code>string deviceModel = 5;</code>
+     * @return The deviceModel.
      */
-    @java.lang.Override public int getDeviceModelValue() {
-      return deviceModel_;
+    @java.lang.Override
+    public java.lang.String getDeviceModel() {
+      java.lang.Object ref = deviceModel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceModel_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
      * 设备类型
      * </pre>
      *
-     * <code>.DeviceModel deviceModel = 5;</code>
-     * @return The deviceModel.
+     * <code>string deviceModel = 5;</code>
+     * @return The bytes for deviceModel.
      */
-    @java.lang.Override public com.sharer.server.core.proto.RequestProto.DeviceModel getDeviceModel() {
-      @SuppressWarnings("deprecation")
-      com.sharer.server.core.proto.RequestProto.DeviceModel result = com.sharer.server.core.proto.RequestProto.DeviceModel.valueOf(deviceModel_);
-      return result == null ? com.sharer.server.core.proto.RequestProto.DeviceModel.UNRECOGNIZED : result;
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDeviceModelBytes() {
+      java.lang.Object ref = deviceModel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceModel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int CLIENTVERSION_FIELD_NUMBER = 6;
@@ -2989,8 +2788,8 @@ public final class RequestProto {
       if (timestamp_ != 0L) {
         output.writeUInt64(4, timestamp_);
       }
-      if (deviceModel_ != com.sharer.server.core.proto.RequestProto.DeviceModel.IOS.getNumber()) {
-        output.writeEnum(5, deviceModel_);
+      if (!getDeviceModelBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, deviceModel_);
       }
       if (!getClientVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, clientVersion_);
@@ -3024,9 +2823,8 @@ public final class RequestProto {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, timestamp_);
       }
-      if (deviceModel_ != com.sharer.server.core.proto.RequestProto.DeviceModel.IOS.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, deviceModel_);
+      if (!getDeviceModelBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, deviceModel_);
       }
       if (!getClientVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, clientVersion_);
@@ -3061,7 +2859,8 @@ public final class RequestProto {
           .equals(other.getToken())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
-      if (deviceModel_ != other.deviceModel_) return false;
+      if (!getDeviceModel()
+          .equals(other.getDeviceModel())) return false;
       if (!getClientVersion()
           .equals(other.getClientVersion())) return false;
       if (!getSystemVersion()
@@ -3090,7 +2889,7 @@ public final class RequestProto {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
       hash = (37 * hash) + DEVICEMODEL_FIELD_NUMBER;
-      hash = (53 * hash) + deviceModel_;
+      hash = (53 * hash) + getDeviceModel().hashCode();
       hash = (37 * hash) + CLIENTVERSION_FIELD_NUMBER;
       hash = (53 * hash) + getClientVersion().hashCode();
       hash = (37 * hash) + SYSTEMVERSION_FIELD_NUMBER;
@@ -3238,7 +3037,7 @@ public final class RequestProto {
 
         timestamp_ = 0L;
 
-        deviceModel_ = 0;
+        deviceModel_ = "";
 
         clientVersion_ = "";
 
@@ -3342,8 +3141,9 @@ public final class RequestProto {
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
         }
-        if (other.deviceModel_ != 0) {
-          setDeviceModelValue(other.getDeviceModelValue());
+        if (!other.getDeviceModel().isEmpty()) {
+          deviceModel_ = other.deviceModel_;
+          onChanged();
         }
         if (!other.getClientVersion().isEmpty()) {
           clientVersion_ = other.clientVersion_;
@@ -3663,29 +3463,63 @@ public final class RequestProto {
         return this;
       }
 
-      private int deviceModel_ = 0;
+      private java.lang.Object deviceModel_ = "";
       /**
        * <pre>
        * 设备类型
        * </pre>
        *
-       * <code>.DeviceModel deviceModel = 5;</code>
-       * @return The enum numeric value on the wire for deviceModel.
+       * <code>string deviceModel = 5;</code>
+       * @return The deviceModel.
        */
-      @java.lang.Override public int getDeviceModelValue() {
-        return deviceModel_;
+      public java.lang.String getDeviceModel() {
+        java.lang.Object ref = deviceModel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceModel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * 设备类型
        * </pre>
        *
-       * <code>.DeviceModel deviceModel = 5;</code>
-       * @param value The enum numeric value on the wire for deviceModel to set.
+       * <code>string deviceModel = 5;</code>
+       * @return The bytes for deviceModel.
+       */
+      public com.google.protobuf.ByteString
+          getDeviceModelBytes() {
+        java.lang.Object ref = deviceModel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceModel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 设备类型
+       * </pre>
+       *
+       * <code>string deviceModel = 5;</code>
+       * @param value The deviceModel to set.
        * @return This builder for chaining.
        */
-      public Builder setDeviceModelValue(int value) {
-        
+      public Builder setDeviceModel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         deviceModel_ = value;
         onChanged();
         return this;
@@ -3695,30 +3529,12 @@ public final class RequestProto {
        * 设备类型
        * </pre>
        *
-       * <code>.DeviceModel deviceModel = 5;</code>
-       * @return The deviceModel.
-       */
-      @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.DeviceModel getDeviceModel() {
-        @SuppressWarnings("deprecation")
-        com.sharer.server.core.proto.RequestProto.DeviceModel result = com.sharer.server.core.proto.RequestProto.DeviceModel.valueOf(deviceModel_);
-        return result == null ? com.sharer.server.core.proto.RequestProto.DeviceModel.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * 设备类型
-       * </pre>
-       *
-       * <code>.DeviceModel deviceModel = 5;</code>
-       * @param value The deviceModel to set.
+       * <code>string deviceModel = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder setDeviceModel(com.sharer.server.core.proto.RequestProto.DeviceModel value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder clearDeviceModel() {
         
-        deviceModel_ = value.getNumber();
+        deviceModel_ = getDefaultInstance().getDeviceModel();
         onChanged();
         return this;
       }
@@ -3727,12 +3543,18 @@ public final class RequestProto {
        * 设备类型
        * </pre>
        *
-       * <code>.DeviceModel deviceModel = 5;</code>
+       * <code>string deviceModel = 5;</code>
+       * @param value The bytes for deviceModel to set.
        * @return This builder for chaining.
        */
-      public Builder clearDeviceModel() {
+      public Builder setDeviceModelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
-        deviceModel_ = 0;
+        deviceModel_ = value;
         onChanged();
         return this;
       }
@@ -6214,30 +6036,74 @@ public final class RequestProto {
 
   }
 
-  public interface MessageRespOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MessageResp)
+  public interface NotificationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Notification)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.NotificationType type = 1;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <code>.NotificationType type = 1;</code>
+     * @return The type.
+     */
+    com.sharer.server.core.proto.RequestProto.NotificationType getType();
+
+    /**
+     * <code>string sender = 2;</code>
+     * @return The sender.
+     */
+    java.lang.String getSender();
+    /**
+     * <code>string sender = 2;</code>
+     * @return The bytes for sender.
+     */
+    com.google.protobuf.ByteString
+        getSenderBytes();
+
+    /**
+     * <code>string json = 3;</code>
+     * @return The json.
+     */
+    java.lang.String getJson();
+    /**
+     * <code>string json = 3;</code>
+     * @return The bytes for json.
+     */
+    com.google.protobuf.ByteString
+        getJsonBytes();
+
+    /**
+     * <code>uint64 timestamp = 4;</code>
+     * @return The timestamp.
+     */
+    long getTimestamp();
   }
   /**
-   * Protobuf type {@code MessageResp}
+   * Protobuf type {@code Notification}
    */
-  public static final class MessageResp extends
+  public static final class Notification extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MessageResp)
-      MessageRespOrBuilder {
+      // @@protoc_insertion_point(message_implements:Notification)
+      NotificationOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MessageResp.newBuilder() to construct.
-    private MessageResp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Notification.newBuilder() to construct.
+    private Notification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MessageResp() {
+    private Notification() {
+      type_ = 0;
+      sender_ = "";
+      json_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MessageResp();
+      return new Notification();
     }
 
     @java.lang.Override
@@ -6245,7 +6111,7 @@ public final class RequestProto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MessageResp(
+    private Notification(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6263,6 +6129,29 @@ public final class RequestProto {
             case 0:
               done = true;
               break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sender_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              json_ = s;
+              break;
+            }
+            case 32: {
+
+              timestamp_ = input.readUInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6284,15 +6173,121 @@ public final class RequestProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.sharer.server.core.proto.RequestProto.internal_static_MessageResp_descriptor;
+      return com.sharer.server.core.proto.RequestProto.internal_static_Notification_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.sharer.server.core.proto.RequestProto.internal_static_MessageResp_fieldAccessorTable
+      return com.sharer.server.core.proto.RequestProto.internal_static_Notification_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.sharer.server.core.proto.RequestProto.MessageResp.class, com.sharer.server.core.proto.RequestProto.MessageResp.Builder.class);
+              com.sharer.server.core.proto.RequestProto.Notification.class, com.sharer.server.core.proto.RequestProto.Notification.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <code>.NotificationType type = 1;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.NotificationType type = 1;</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.sharer.server.core.proto.RequestProto.NotificationType getType() {
+      @SuppressWarnings("deprecation")
+      com.sharer.server.core.proto.RequestProto.NotificationType result = com.sharer.server.core.proto.RequestProto.NotificationType.valueOf(type_);
+      return result == null ? com.sharer.server.core.proto.RequestProto.NotificationType.UNRECOGNIZED : result;
+    }
+
+    public static final int SENDER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object sender_;
+    /**
+     * <code>string sender = 2;</code>
+     * @return The sender.
+     */
+    @java.lang.Override
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sender = 2;</code>
+     * @return The bytes for sender.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSenderBytes() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JSON_FIELD_NUMBER = 3;
+    private volatile java.lang.Object json_;
+    /**
+     * <code>string json = 3;</code>
+     * @return The json.
+     */
+    @java.lang.Override
+    public java.lang.String getJson() {
+      java.lang.Object ref = json_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        json_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string json = 3;</code>
+     * @return The bytes for json.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getJsonBytes() {
+      java.lang.Object ref = json_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        json_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private long timestamp_;
+    /**
+     * <code>uint64 timestamp = 4;</code>
+     * @return The timestamp.
+     */
+    @java.lang.Override
+    public long getTimestamp() {
+      return timestamp_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6309,6 +6304,18 @@ public final class RequestProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (type_ != com.sharer.server.core.proto.RequestProto.NotificationType.SESSION_OFF.getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sender_);
+      }
+      if (!getJsonBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, json_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeUInt64(4, timestamp_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6318,6 +6325,20 @@ public final class RequestProto {
       if (size != -1) return size;
 
       size = 0;
+      if (type_ != com.sharer.server.core.proto.RequestProto.NotificationType.SESSION_OFF.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sender_);
+      }
+      if (!getJsonBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, json_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, timestamp_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6328,11 +6349,18 @@ public final class RequestProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.sharer.server.core.proto.RequestProto.MessageResp)) {
+      if (!(obj instanceof com.sharer.server.core.proto.RequestProto.Notification)) {
         return super.equals(obj);
       }
-      com.sharer.server.core.proto.RequestProto.MessageResp other = (com.sharer.server.core.proto.RequestProto.MessageResp) obj;
+      com.sharer.server.core.proto.RequestProto.Notification other = (com.sharer.server.core.proto.RequestProto.Notification) obj;
 
+      if (type_ != other.type_) return false;
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (!getJson()
+          .equals(other.getJson())) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6344,74 +6372,83 @@ public final class RequestProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + SENDER_FIELD_NUMBER;
+      hash = (53 * hash) + getSender().hashCode();
+      hash = (37 * hash) + JSON_FIELD_NUMBER;
+      hash = (53 * hash) + getJson().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(byte[] data)
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(java.io.InputStream input)
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseDelimitedFrom(java.io.InputStream input)
+    public static com.sharer.server.core.proto.RequestProto.Notification parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseDelimitedFrom(
+    public static com.sharer.server.core.proto.RequestProto.Notification parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.sharer.server.core.proto.RequestProto.MessageResp parseFrom(
+    public static com.sharer.server.core.proto.RequestProto.Notification parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6424,7 +6461,7 @@ public final class RequestProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.sharer.server.core.proto.RequestProto.MessageResp prototype) {
+    public static Builder newBuilder(com.sharer.server.core.proto.RequestProto.Notification prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6440,26 +6477,26 @@ public final class RequestProto {
       return builder;
     }
     /**
-     * Protobuf type {@code MessageResp}
+     * Protobuf type {@code Notification}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MessageResp)
-        com.sharer.server.core.proto.RequestProto.MessageRespOrBuilder {
+        // @@protoc_insertion_point(builder_implements:Notification)
+        com.sharer.server.core.proto.RequestProto.NotificationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.sharer.server.core.proto.RequestProto.internal_static_MessageResp_descriptor;
+        return com.sharer.server.core.proto.RequestProto.internal_static_Notification_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.sharer.server.core.proto.RequestProto.internal_static_MessageResp_fieldAccessorTable
+        return com.sharer.server.core.proto.RequestProto.internal_static_Notification_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.sharer.server.core.proto.RequestProto.MessageResp.class, com.sharer.server.core.proto.RequestProto.MessageResp.Builder.class);
+                com.sharer.server.core.proto.RequestProto.Notification.class, com.sharer.server.core.proto.RequestProto.Notification.Builder.class);
       }
 
-      // Construct using com.sharer.server.core.proto.RequestProto.MessageResp.newBuilder()
+      // Construct using com.sharer.server.core.proto.RequestProto.Notification.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6477,23 +6514,31 @@ public final class RequestProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        type_ = 0;
+
+        sender_ = "";
+
+        json_ = "";
+
+        timestamp_ = 0L;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.sharer.server.core.proto.RequestProto.internal_static_MessageResp_descriptor;
+        return com.sharer.server.core.proto.RequestProto.internal_static_Notification_descriptor;
       }
 
       @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.MessageResp getDefaultInstanceForType() {
-        return com.sharer.server.core.proto.RequestProto.MessageResp.getDefaultInstance();
+      public com.sharer.server.core.proto.RequestProto.Notification getDefaultInstanceForType() {
+        return com.sharer.server.core.proto.RequestProto.Notification.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.MessageResp build() {
-        com.sharer.server.core.proto.RequestProto.MessageResp result = buildPartial();
+      public com.sharer.server.core.proto.RequestProto.Notification build() {
+        com.sharer.server.core.proto.RequestProto.Notification result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6501,8 +6546,12 @@ public final class RequestProto {
       }
 
       @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.MessageResp buildPartial() {
-        com.sharer.server.core.proto.RequestProto.MessageResp result = new com.sharer.server.core.proto.RequestProto.MessageResp(this);
+      public com.sharer.server.core.proto.RequestProto.Notification buildPartial() {
+        com.sharer.server.core.proto.RequestProto.Notification result = new com.sharer.server.core.proto.RequestProto.Notification(this);
+        result.type_ = type_;
+        result.sender_ = sender_;
+        result.json_ = json_;
+        result.timestamp_ = timestamp_;
         onBuilt();
         return result;
       }
@@ -6541,16 +6590,30 @@ public final class RequestProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sharer.server.core.proto.RequestProto.MessageResp) {
-          return mergeFrom((com.sharer.server.core.proto.RequestProto.MessageResp)other);
+        if (other instanceof com.sharer.server.core.proto.RequestProto.Notification) {
+          return mergeFrom((com.sharer.server.core.proto.RequestProto.Notification)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.sharer.server.core.proto.RequestProto.MessageResp other) {
-        if (other == com.sharer.server.core.proto.RequestProto.MessageResp.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.sharer.server.core.proto.RequestProto.Notification other) {
+        if (other == com.sharer.server.core.proto.RequestProto.Notification.getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (!other.getSender().isEmpty()) {
+          sender_ = other.sender_;
+          onChanged();
+        }
+        if (!other.getJson().isEmpty()) {
+          json_ = other.json_;
+          onChanged();
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6566,17 +6629,254 @@ public final class RequestProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.sharer.server.core.proto.RequestProto.MessageResp parsedMessage = null;
+        com.sharer.server.core.proto.RequestProto.Notification parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sharer.server.core.proto.RequestProto.MessageResp) e.getUnfinishedMessage();
+          parsedMessage = (com.sharer.server.core.proto.RequestProto.Notification) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>.NotificationType type = 1;</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.NotificationType type = 1;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.NotificationType type = 1;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.sharer.server.core.proto.RequestProto.NotificationType getType() {
+        @SuppressWarnings("deprecation")
+        com.sharer.server.core.proto.RequestProto.NotificationType result = com.sharer.server.core.proto.RequestProto.NotificationType.valueOf(type_);
+        return result == null ? com.sharer.server.core.proto.RequestProto.NotificationType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.NotificationType type = 1;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.sharer.server.core.proto.RequestProto.NotificationType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.NotificationType type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sender_ = "";
+      /**
+       * <code>string sender = 2;</code>
+       * @return The sender.
+       */
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sender_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sender = 2;</code>
+       * @return The bytes for sender.
+       */
+      public com.google.protobuf.ByteString
+          getSenderBytes() {
+        java.lang.Object ref = sender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sender = 2;</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSender(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sender = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSender() {
+        
+        sender_ = getDefaultInstance().getSender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sender = 2;</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object json_ = "";
+      /**
+       * <code>string json = 3;</code>
+       * @return The json.
+       */
+      public java.lang.String getJson() {
+        java.lang.Object ref = json_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          json_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string json = 3;</code>
+       * @return The bytes for json.
+       */
+      public com.google.protobuf.ByteString
+          getJsonBytes() {
+        java.lang.Object ref = json_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          json_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string json = 3;</code>
+       * @param value The json to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        json_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string json = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJson() {
+        
+        json_ = getDefaultInstance().getJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string json = 3;</code>
+       * @param value The bytes for json to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        json_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>uint64 timestamp = 4;</code>
+       * @return The timestamp.
+       */
+      @java.lang.Override
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>uint64 timestamp = 4;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 timestamp = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -6592,41 +6892,41 @@ public final class RequestProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:MessageResp)
+      // @@protoc_insertion_point(builder_scope:Notification)
     }
 
-    // @@protoc_insertion_point(class_scope:MessageResp)
-    private static final com.sharer.server.core.proto.RequestProto.MessageResp DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:Notification)
+    private static final com.sharer.server.core.proto.RequestProto.Notification DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.sharer.server.core.proto.RequestProto.MessageResp();
+      DEFAULT_INSTANCE = new com.sharer.server.core.proto.RequestProto.Notification();
     }
 
-    public static com.sharer.server.core.proto.RequestProto.MessageResp getDefaultInstance() {
+    public static com.sharer.server.core.proto.RequestProto.Notification getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MessageResp>
-        PARSER = new com.google.protobuf.AbstractParser<MessageResp>() {
+    private static final com.google.protobuf.Parser<Notification>
+        PARSER = new com.google.protobuf.AbstractParser<Notification>() {
       @java.lang.Override
-      public MessageResp parsePartialFrom(
+      public Notification parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MessageResp(input, extensionRegistry);
+        return new Notification(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MessageResp> parser() {
+    public static com.google.protobuf.Parser<Notification> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MessageResp> getParserForType() {
+    public com.google.protobuf.Parser<Notification> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.sharer.server.core.proto.RequestProto.MessageResp getDefaultInstanceForType() {
+    public com.sharer.server.core.proto.RequestProto.Notification getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7376,424 +7676,6 @@ public final class RequestProto {
 
   }
 
-  public interface HearBeatRespOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:HearBeatResp)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * Protobuf type {@code HearBeatResp}
-   */
-  public static final class HearBeatResp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:HearBeatResp)
-      HearBeatRespOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use HearBeatResp.newBuilder() to construct.
-    private HearBeatResp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private HearBeatResp() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new HearBeatResp();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private HearBeatResp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.sharer.server.core.proto.RequestProto.internal_static_HearBeatResp_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.sharer.server.core.proto.RequestProto.internal_static_HearBeatResp_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.sharer.server.core.proto.RequestProto.HearBeatResp.class, com.sharer.server.core.proto.RequestProto.HearBeatResp.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.sharer.server.core.proto.RequestProto.HearBeatResp)) {
-        return super.equals(obj);
-      }
-      com.sharer.server.core.proto.RequestProto.HearBeatResp other = (com.sharer.server.core.proto.RequestProto.HearBeatResp) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.sharer.server.core.proto.RequestProto.HearBeatResp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code HearBeatResp}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:HearBeatResp)
-        com.sharer.server.core.proto.RequestProto.HearBeatRespOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.sharer.server.core.proto.RequestProto.internal_static_HearBeatResp_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.sharer.server.core.proto.RequestProto.internal_static_HearBeatResp_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.sharer.server.core.proto.RequestProto.HearBeatResp.class, com.sharer.server.core.proto.RequestProto.HearBeatResp.Builder.class);
-      }
-
-      // Construct using com.sharer.server.core.proto.RequestProto.HearBeatResp.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.sharer.server.core.proto.RequestProto.internal_static_HearBeatResp_descriptor;
-      }
-
-      @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.HearBeatResp getDefaultInstanceForType() {
-        return com.sharer.server.core.proto.RequestProto.HearBeatResp.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.HearBeatResp build() {
-        com.sharer.server.core.proto.RequestProto.HearBeatResp result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.sharer.server.core.proto.RequestProto.HearBeatResp buildPartial() {
-        com.sharer.server.core.proto.RequestProto.HearBeatResp result = new com.sharer.server.core.proto.RequestProto.HearBeatResp(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sharer.server.core.proto.RequestProto.HearBeatResp) {
-          return mergeFrom((com.sharer.server.core.proto.RequestProto.HearBeatResp)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.sharer.server.core.proto.RequestProto.HearBeatResp other) {
-        if (other == com.sharer.server.core.proto.RequestProto.HearBeatResp.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.sharer.server.core.proto.RequestProto.HearBeatResp parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sharer.server.core.proto.RequestProto.HearBeatResp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:HearBeatResp)
-    }
-
-    // @@protoc_insertion_point(class_scope:HearBeatResp)
-    private static final com.sharer.server.core.proto.RequestProto.HearBeatResp DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.sharer.server.core.proto.RequestProto.HearBeatResp();
-    }
-
-    public static com.sharer.server.core.proto.RequestProto.HearBeatResp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<HearBeatResp>
-        PARSER = new com.google.protobuf.AbstractParser<HearBeatResp>() {
-      @java.lang.Override
-      public HearBeatResp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HearBeatResp(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<HearBeatResp> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<HearBeatResp> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.sharer.server.core.proto.RequestProto.HearBeatResp getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Request_descriptor;
   private static final 
@@ -7815,20 +7697,15 @@ public final class RequestProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Message_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MessageResp_descriptor;
+    internal_static_Notification_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MessageResp_fieldAccessorTable;
+      internal_static_Notification_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_HearBeat_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_HearBeat_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HearBeatResp_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HearBeatResp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7838,31 +7715,32 @@ public final class RequestProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rrequest.proto\"\340\002\n\007Request\022#\n\010category\030" +
+      "\n\rrequest.proto\"\315\002\n\007Request\022#\n\010category\030" +
       "\001 \001(\0162\021.Request.Category\022\027\n\005login\030\002 \001(\0132" +
       "\006.LoginH\000\022\037\n\tloginResp\030\003 \001(\0132\n.LoginResp" +
-      "H\000\022\033\n\007message\030\004 \001(\0132\010.MessageH\000\022#\n\013messa" +
-      "geResp\030\005 \001(\0132\014.MessageRespH\000\022\035\n\010hearbeat" +
-      "\030\006 \001(\0132\t.HearBeatH\000\022%\n\014hearBeatResp\030\007 \001(" +
-      "\0132\r.HearBeatRespH\000\"b\n\010Category\022\t\n\005Login\020" +
-      "\000\022\r\n\tLoginResp\020\001\022\013\n\007Message\020\002\022\017\n\013Message" +
-      "Resp\020\003\022\014\n\010HearBeat\020\004\022\020\n\014HearBeatResp\020\005B\n" +
-      "\n\010dataBody\"\246\001\n\005Login\022\n\n\002id\030\001 \001(\004\022\017\n\007acco" +
-      "unt\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\021\n\ttimestamp\030\004 " +
-      "\001(\004\022!\n\013deviceModel\030\005 \001(\0162\014.DeviceModel\022\025" +
-      "\n\rclientVersion\030\006 \001(\t\022\025\n\rsystemVersion\030\007" +
-      " \001(\t\022\r\n\005state\030\010 \001(\r\">\n\tLoginResp\022\r\n\005stat" +
-      "e\030\001 \001(\r\022\017\n\007account\030\002 \001(\t\022\021\n\ttimestamp\030\003 " +
-      "\001(\004\"\210\001\n\007Message\022\n\n\002id\030\001 \001(\004\022\014\n\004time\030\002 \001(" +
-      "\004\022\031\n\007msgType\030\003 \001(\0162\010.MsgType\022\017\n\007content\030" +
-      "\004 \001(\t\022\014\n\004from\030\005 \001(\t\022\n\n\002to\030\006 \001(\t\022\r\n\005state" +
-      "\030\007 \001(\r\022\016\n\006isread\030\010 \001(\r\"\r\n\013MessageResp\"8\n" +
-      "\010HearBeat\022\013\n\003seq\030\001 \001(\r\022\014\n\004json\030\002 \001(\t\022\021\n\t" +
-      "timestamp\030\003 \001(\004\"\016\n\014HearBeatResp*,\n\013Devic" +
-      "eModel\022\007\n\003IOS\020\000\022\013\n\007ANDROID\020\001\022\007\n\003WEB\020\002*6\n" +
-      "\007MsgType\022\010\n\004TEXT\020\000\022\013\n\007PICUTRE\020\001\022\t\n\005VOICE" +
-      "\020\002\022\t\n\005VIDEO\020\003B,\n\034com.sharer.server.core." +
-      "protoB\014RequestProtob\006proto3"
+      "H\000\022\033\n\007message\030\004 \001(\0132\010.MessageH\000\022%\n\014notif" +
+      "ication\030\005 \001(\0132\r.NotificationH\000\022\035\n\010hearbe" +
+      "at\030\006 \001(\0132\t.HearBeatH\000\"t\n\010Category\022\t\n\005Log" +
+      "in\020\000\022\r\n\tLoginResp\020\001\022\013\n\007Message\020\002\022\017\n\013Mess" +
+      "ageResp\020\003\022\014\n\010HearBeat\020\004\022\020\n\014HearBeatResp\020" +
+      "\005\022\020\n\014Notification\020\006B\n\n\010dataBody\"\230\001\n\005Logi" +
+      "n\022\n\n\002id\030\001 \001(\004\022\017\n\007account\030\002 \001(\t\022\r\n\005token\030" +
+      "\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\004\022\023\n\013deviceModel\030" +
+      "\005 \001(\t\022\025\n\rclientVersion\030\006 \001(\t\022\025\n\rsystemVe" +
+      "rsion\030\007 \001(\t\022\r\n\005state\030\010 \001(\r\">\n\tLoginResp\022" +
+      "\r\n\005state\030\001 \001(\r\022\017\n\007account\030\002 \001(\t\022\021\n\ttimes" +
+      "tamp\030\003 \001(\004\"\210\001\n\007Message\022\n\n\002id\030\001 \001(\004\022\014\n\004ti" +
+      "me\030\002 \001(\004\022\031\n\007msgType\030\003 \001(\0162\010.MsgType\022\017\n\007c" +
+      "ontent\030\004 \001(\t\022\014\n\004from\030\005 \001(\t\022\n\n\002to\030\006 \001(\t\022\r" +
+      "\n\005state\030\007 \001(\r\022\016\n\006isread\030\010 \001(\r\"`\n\014Notific" +
+      "ation\022\037\n\004type\030\001 \001(\0162\021.NotificationType\022\016" +
+      "\n\006sender\030\002 \001(\t\022\014\n\004json\030\003 \001(\t\022\021\n\ttimestam" +
+      "p\030\004 \001(\004\"8\n\010HearBeat\022\013\n\003seq\030\001 \001(\r\022\014\n\004json" +
+      "\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\004*6\n\007MsgType\022\010\n\004" +
+      "TEXT\020\000\022\013\n\007PICUTRE\020\001\022\t\n\005VOICE\020\002\022\t\n\005VIDEO\020" +
+      "\003*3\n\020NotificationType\022\017\n\013SESSION_OFF\020\000\022\016" +
+      "\n\nSESSION_ON\020\001B,\n\034com.sharer.server.core" +
+      ".protoB\014RequestProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7873,7 +7751,7 @@ public final class RequestProto {
     internal_static_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Request_descriptor,
-        new java.lang.String[] { "Category", "Login", "LoginResp", "Message", "MessageResp", "Hearbeat", "HearBeatResp", "DataBody", });
+        new java.lang.String[] { "Category", "Login", "LoginResp", "Message", "Notification", "Hearbeat", "DataBody", });
     internal_static_Login_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_Login_fieldAccessorTable = new
@@ -7892,24 +7770,18 @@ public final class RequestProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Message_descriptor,
         new java.lang.String[] { "Id", "Time", "MsgType", "Content", "From", "To", "State", "Isread", });
-    internal_static_MessageResp_descriptor =
+    internal_static_Notification_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_MessageResp_fieldAccessorTable = new
+    internal_static_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MessageResp_descriptor,
-        new java.lang.String[] { });
+        internal_static_Notification_descriptor,
+        new java.lang.String[] { "Type", "Sender", "Json", "Timestamp", });
     internal_static_HearBeat_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_HearBeat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HearBeat_descriptor,
         new java.lang.String[] { "Seq", "Json", "Timestamp", });
-    internal_static_HearBeatResp_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_HearBeatResp_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HearBeatResp_descriptor,
-        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
