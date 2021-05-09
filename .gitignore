@@ -1,3 +1,8 @@
 /im-server/target/
 /logs/
 /sharer-common/target/
+/.idea/
+/im-server/im-server.iml
+/sharer.iml
+/sharer-admin/sharer-admin.iml
+/sharer-common/sharer-common.iml
