@@ -1,17 +1,27 @@
 package com.sharer.server.core.server;
 
+import com.google.protobuf.MessageLite;
+import com.google.protobuf.MessageLiteOrBuilder;
 import com.sharer.server.core.cocurrent.FutureTaskScheduler;
 import com.sharer.server.core.distributed.ImWorker;
 import com.sharer.server.core.distributed.WorkerRouter;
 import com.sharer.server.core.handler.*;
 import com.sharer.server.core.proto.RequestProto;
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.MessageToMessageDecoder;
+import io.netty.handler.codec.MessageToMessageEncoder;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
+import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
+import io.netty.handler.codec.http.websocketx.WebSocketFrame;
+import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
+import io.netty.handler.codec.http.websocketx.extensions.compression.WebSocketServerCompressionHandler;
 import io.netty.handler.codec.protobuf.ProtobufDecoder;
 import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
@@ -25,6 +35,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.InetSocketAddress;
+import java.util.List;
+
+import static io.netty.buffer.Unpooled.wrappedBuffer;
 
 public class ChatServer {
 
@@ -92,9 +105,9 @@ public class ChatServer {
             this.bindWebPort();
         }
 
-        ImWorker.getInst().setLocalNode(ip, port,webPort);
+        ImWorker.getInst().setLocalNode(ip, port, webPort);
 
-        FutureTaskScheduler.add(()->{
+        FutureTaskScheduler.add(() -> {
             /**
              * 启动节点
              */
@@ -122,8 +135,8 @@ public class ChatServer {
         pipeline.addLast(new LoggingHandler(LogLevel.INFO));
         pipeline.addLast(new IdleStateHandler(READ_IDLE_TIME, WRITE_IDLE_TIME, 0));
         pipeline.addLast("heartBeat", new HeartBeatServerHandler());
-        pipeline.addLast("loginRequestHandler",loginRequestHandler);
-        pipeline.addLast("messageRequestHandler",messageRequestHandler);
+        pipeline.addLast("loginRequestHandler", loginRequestHandler);
+        pipeline.addLast("messageRequestHandler", messageRequestHandler);
         pipeline.addLast("remoteNotificationHandler", remoteNotificationHandler);
         pipeline.addLast("serverException", serverExceptionHandler);
     }
@@ -193,12 +206,46 @@ public class ChatServer {
             protected void initChannel(SocketChannel ch) throws Exception {
                 ChannelPipeline pipeline = ch.pipeline();
                 // webscoket协议支持
-                // pipeline.addLast("logging-handler",new LoggingHandler(LogLevel.INFO));
+                pipeline.addLast("logging-handler",new LoggingHandler(LogLevel.INFO));
                 pipeline.addLast("http-codec", new HttpServerCodec());
                 pipeline.addLast("aggregator", new HttpObjectAggregator(65536));
                 pipeline.addLast("http-chunked", new ChunkedWriteHandler());
-                pipelineSet(pipeline);
-
+                pipeline.addLast(new WebSocketServerCompressionHandler());
+                // 协议包长度限制
+                pipeline.addLast(new WebSocketServerProtocolHandler("/chat", null, true, 1024 * 10));
+                pipeline.addLast(new MessageToMessageDecoder<WebSocketFrame>() {
+                    @Override
+                    protected void decode(ChannelHandlerContext ctx, WebSocketFrame frame, List<Object> objs) throws Exception {
+                        System.out.println("====1111111111111111111111111111111111");
+                        ByteBuf buf = ((BinaryWebSocketFrame) frame).content();
+                        System.out.println("====1111111111111111111111111111111111");
+                        objs.add(buf);
+                        buf.retain();
+                    }
+                });
+                // 协议包编码
+                pipeline.addLast(new MessageToMessageEncoder<MessageLiteOrBuilder>() {
+                    @Override
+                    protected void encode(ChannelHandlerContext ctx, MessageLiteOrBuilder msg, List<Object> out) throws Exception {
+                        ByteBuf result = null;
+                        if (msg instanceof MessageLite) {
+                            result = Unpooled.wrappedBuffer(((MessageLite) msg).toByteArray());
+                        }
+                        if (msg instanceof MessageLite.Builder) {
+                            result = Unpooled.wrappedBuffer(((MessageLite.Builder) msg).build().toByteArray());
+                        }
+                        // ==== 上面代码片段是拷贝自TCP ProtobufEncoder 源码 ====
+                        // 然后下面再转成websocket二进制流，因为客户端不能直接解析protobuf编码生成的
+                        System.out.println("1111111111111111111111111111111111");
+                        WebSocketFrame frame = new BinaryWebSocketFrame(result);
+                        System.out.println("2222222222222222222222222222222222");
+                        out.add(frame);
+                    }
+                });
+                pipeline.addLast(new ProtobufDecoder(RequestProto.Request.getDefaultInstance()));
+                //pipeline.addLast("websocketHandler",new WebSocketServerHandler());
+                pipeline.addLast(new ServerFrameHandler());
+                //pipelineSet(pipeline);
                 //ch.pipeline().addLast(channelEventHandler);
             }
         });
