@@ -6,6 +6,7 @@ import com.sharer.server.core.processer.LoginProcesser;
 import com.sharer.server.core.proto.RequestProto;
 import com.sharer.server.core.session.LocalSession;
 import com.sharer.server.core.session.SessionManager;
+import com.sharer.server.core.utils.JsonUtils;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -35,30 +36,32 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
             super.channelRead(ctx, msg);
             return;
         }
+        log.error(JsonUtils.toJSONString(request.getLogin()));
+        ctx.channel().writeAndFlush(handlerLoginRespone(request.getLogin()));
         // 登录session封装
-        LocalSession localSession = new LocalSession(ctx.channel());
-        CallbackTaskScheduler.add(new CallbackTask<Boolean>() {
-            @Override
-            public Boolean execute() throws Exception {
-                return loginProcesser.action(localSession, request);
-            }
-            @Override
-            public void onBack(Boolean r) {
-                if (r) {
-                    ctx.pipeline().remove(LoginRequestHandler.this);
-                    log.info("登录成功:" + localSession.getUserVo());
-                } else {
-                    SessionManager.instance().closeSession(ctx);
-                    log.info("登录失败:" + localSession.getUserVo());
-                }
-            }
-            @Override
-            public void onException(Throwable t) {
-                t.printStackTrace();
-                log.info("登录失败:" + localSession.getUserVo());
-                SessionManager.instance().closeSession(ctx);
-            }
-        });
+//        LocalSession localSession = new LocalSession(ctx.channel());
+//        CallbackTaskScheduler.add(new CallbackTask<Boolean>() {
+//            @Override
+//            public Boolean execute() throws Exception {
+//                return loginProcesser.action(localSession, request);
+//            }
+//            @Override
+//            public void onBack(Boolean r) {
+//                if (r) {
+//                    ctx.pipeline().remove(LoginRequestHandler.this);
+//                    log.info("登录成功:" + localSession.getUserVo());
+//                } else {
+//                    SessionManager.instance().closeSession(ctx);
+//                    log.info("登录失败:" + localSession.getUserVo());
+//                }
+//            }
+//            @Override
+//            public void onException(Throwable t) {
+//                t.printStackTrace();
+//                log.info("登录失败:" + localSession.getUserVo());
+//                SessionManager.instance().closeSession(ctx);
+//            }
+//        });
 
     }
 

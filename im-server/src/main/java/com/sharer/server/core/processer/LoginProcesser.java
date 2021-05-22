@@ -1,6 +1,7 @@
 package com.sharer.server.core.processer;
 
 import com.sharer.common.IMContanst;
+import com.sharer.server.core.utils.JsonUtils;
 import com.sharer.server.core.vo.UserVo;
 import com.sharer.server.core.proto.RequestProto;
 import com.sharer.server.core.session.LocalSession;
@@ -28,6 +29,7 @@ public class LoginProcesser extends AbstractServerProcesser {
     public Boolean action(LocalSession session, RequestProto.Request proto) {
         // 验证token
         RequestProto.Login login = proto.getLogin();
+        log.error(JsonUtils.toJSONString(login));
         // redis 认证
         String key = IMContanst.TOKEN_HEADER.replace(IMContanst.ACCOUNT, login.getAccount()).replace(IMContanst.DEVICE_MODEL,login.getDeviceModel());
         String imtoken = (String)redisTemplate.opsForValue().get(key);

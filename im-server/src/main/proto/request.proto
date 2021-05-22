@@ -1,4 +1,5 @@
 syntax = "proto3";
+//package com.sharer.server.core.proto;
 //定义protobuf的包名称空间
 option java_package = "com.sharer.server.core.proto";
 // 消息体名称
