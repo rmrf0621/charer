@@ -67,9 +67,9 @@ class HelloClientIntHandler extends ChannelInboundHandlerAdapter {
         RequestProto.Request.Builder builders = RequestProto.Request.newBuilder();
 
         RequestProto.Login.Builder login = RequestProto.Login.newBuilder();
-        login.setAccount("charlie");
+        login.setAccount("root");
         login.setClientVersion("1");
-        login.setToken("E10ADC3949BA59ABBE56E057F20F883E");
+        login.setToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjMxMzg0ODMsInVzZXJpZCI6MTAwMCwiaWF0IjoxNjIyMjc0NDgzLCJ1c2VybmFtZSI6ImNoYXJsaWUifQ.WR_Z-5W5tJwJMZtTzkN6JgZUPFFVsitJTtAILRoxA9Q");
         login.setDeviceModel("android");
         login.setId(System.currentTimeMillis());
         login.setState(1);
@@ -88,8 +88,8 @@ class HelloClientIntHandler extends ChannelInboundHandlerAdapter {
         message.setId(10000 + index);
         message.setContent("我也不知道该说些什么");
         message.setMsgType(RequestProto.MsgType.TEXT);
-        message.setFrom("2");
-        message.setTo("3");
+        message.setFrom("root");
+        message.setTo("charlie");
         message.setState(1);
         message.setIsread(1);
         message.setTime(System.currentTimeMillis());

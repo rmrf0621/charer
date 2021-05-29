@@ -12,7 +12,7 @@ spring:
   redis:
     blockWhenExhausted: true
     database: 0
-    host: 192.168.33.128
+    host: 192.168.33.129
     maxIdle: 100
     maxTotal: 2000
     maxWaitMillis: 60000

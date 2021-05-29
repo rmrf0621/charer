@@ -136,10 +136,6 @@ public class ChatServer {
      * @param pipeline
      */
     private void pipelineSet(ChannelPipeline pipeline) {
-        pipeline.addLast(new ProtobufVarint32FrameDecoder());
-        pipeline.addLast(new ProtobufDecoder(RequestProto.Request.getDefaultInstance()));
-        pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
-        pipeline.addLast(new ProtobufEncoder());
         pipeline.addLast(new LoggingHandler(LogLevel.INFO));
         pipeline.addLast(new IdleStateHandler(READ_IDLE_TIME, WRITE_IDLE_TIME, 0));
         pipeline.addLast("heartBeat", new HeartBeatServerHandler());
@@ -172,6 +168,11 @@ public class ChatServer {
             @Override
             protected void initChannel(SocketChannel ch) throws Exception {
                 ChannelPipeline pipeline = ch.pipeline();
+
+                pipeline.addLast(new ProtobufVarint32FrameDecoder());
+                pipeline.addLast(new ProtobufDecoder(RequestProto.Request.getDefaultInstance()));
+                pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
+                pipeline.addLast(new ProtobufEncoder());
 
                 pipelineSet(pipeline);
             }
@@ -236,22 +237,17 @@ public class ChatServer {
                     @Override
                     protected void encode(ChannelHandlerContext ctx, MessageLiteOrBuilder msg, List<Object> out) throws Exception {
                         RequestProto.Request request = (RequestProto.Request) msg;
-                        System.out.println(JsonUtils.toJSONString(request.getLogin()));
                         WebSocketFrame frame = new BinaryWebSocketFrame(Unpooled.wrappedBuffer(request.toByteArray()));
                         out.add(frame);
                     }
                 });
                 pipeline.addLast(new ProtobufDecoder(RequestProto.Request.getDefaultInstance()));
                 pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
-                //pipeline.addLast(new ProtobufEncoder());
-                pipeline.addLast(new LoggingHandler(LogLevel.INFO));
-                pipeline.addLast(new IdleStateHandler(READ_IDLE_TIME, WRITE_IDLE_TIME, 0));
-                pipeline.addLast("loginRequestHandler", loginRequestHandler);
+                //pipeline.addLast(new LoggingHandler(LogLevel.INFO));
+                //pipeline.addLast(new IdleStateHandler(READ_IDLE_TIME, WRITE_IDLE_TIME, 0));
+                //pipeline.addLast("loginRequestHandler", loginRequestHandler);
 
-                //pipeline.addLast("webSocketProtobufDecoder", new WebSocketProtobufDecoder());
-                // 协议包编码
-                //pipeline.addLast("webSocketProtobufEncoder", new WebSocketProtobufEncoder());
-                //pipelineSet(pipeline);
+                pipelineSet(pipeline);
             }
         });
 
@@ -297,7 +293,6 @@ public class ChatServer {
         private String ip;
         private Integer appPort;
         private Integer webPort;
-        //private CIMRequestHandler outerRequestHandler;
 
         public Builder() {
         }
