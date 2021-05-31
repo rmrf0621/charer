@@ -8,6 +8,7 @@
         <module>sharer-common</module>
         <module>sharer-admin</module>
 		<module>sharer-api</module>
+        <module>core-module</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

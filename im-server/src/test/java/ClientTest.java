@@ -1,5 +1,6 @@
 
 import com.sharer.server.core.proto.RequestProto;
+import com.sharer.server.core.utils.JsonUtils;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -103,7 +104,8 @@ class HelloClientIntHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("=====================读取服务端消息========================");
         RequestProto.Request request = (RequestProto.Request) msg;
-        System.out.println(request.toString());
+        RequestProto.Message message = request.getMessage();
+        System.out.println("发送人:" + message.getFrom() + ",接收人:" + message.getTo() + ",消息内容:" + message.getContent());
         ctx.channel().writeAndFlush(createReq(1));
         System.out.println("=====================读取服务端消息========================");
     }
