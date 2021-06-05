@@ -1,8 +1,7 @@
 server:
   port: 9000
 filter:
-  ignore:
-    -
+  ignore: /user/login,
 spring:
   redis:
     blockWhenExhausted: true
@@ -26,6 +25,27 @@ spring:
     username: root
     password: 123456  #数据库名、用户名和密码改为自己的
     driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+#  jackson:
+#    #日期格式化
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#    serialization:
+#      #格式化输出
+#      indent_output: true
+#      #忽略无法转换的对象
+#      fail_on_empty_beans: false
+#    #设置空如何序列化
+#    defaultPropertyInclusion: NON_EMPTY
+#    deserialization:
+#      #允许对象忽略json中不存在的属性
+#      fail_on_unknown_properties: false
+#    parser:
+#      #允许出现特殊字符和转义符
+#      allow_unquoted_control_chars: true
+#      #允许出现单引号
+#      allow_single_quotes: true
 mybatis-plus:
   # Mapper.xml 文件位置 Maven 多模块项目的扫描路径需以 classpath*: 开头
   mapperLocations: classpath:mapper/*Mapper.xml

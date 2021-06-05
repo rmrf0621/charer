@@ -13,6 +13,8 @@ import com.sharer.user.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 /**
  * <p>
  * 服务实现类
@@ -49,6 +51,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         String salt = StrUtil.uuid().substring(24);
         userEntity.setPasswd(MD5.create().digestHex(userVo.getPassword() + salt));
         userEntity.setSalt(salt);
+        userEntity.setCreatetime(LocalDateTime.now());
+        userEntity.setGender(1);
+        //userEntity.setPortrait();
+        userEntity.setMobile(userVo.getMobile());
+        userEntity.setDelete(0);
+        userMapper.insert(userEntity);
         return GeneraterResult.success("用户创建成功!");
     }
 }

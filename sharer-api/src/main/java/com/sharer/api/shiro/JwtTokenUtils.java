@@ -5,13 +5,13 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.sharer.api.shiro.vo.UserVo;
+import com.sharer.api.shiro.vo.UserTokenVo;
+import com.sharer.common.utils.JsonUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 功能描述
@@ -22,6 +22,7 @@ import java.util.Map;
  */
 public class JwtTokenUtils {
 
+    private final static Logger logger = LoggerFactory.getLogger(JwtTokenUtils.class);
     /**
      * token秘钥，请勿泄露，请勿随便修改 backups:JKKLJOoadsafa
      */
@@ -38,10 +39,9 @@ public class JwtTokenUtils {
      * <p>
      * JWT构成: header, payload, signature
      *
-     * @param userid   登录成功后用户的基本信息
-     * @param username
+     * @param userTokenVo 登录成功后用户的基本信息
      */
-    public static String createToken(long userid, String username) throws Exception {
+    public static String createToken(UserTokenVo userTokenVo) throws Exception {
         Date iatDate = new Date();
         // expire time
         Calendar nowTime = Calendar.getInstance();
@@ -58,8 +58,7 @@ public class JwtTokenUtils {
         String token = JWT.create().withHeader(map) // header
                 //.withClaim("iss", "Service") // payload
                 //.withClaim("aud", "APP")
-                .withClaim("userid", userid)
-                .withClaim("username", username)
+                .withClaim("userTokenVo", JsonUtils.toJSONString(userTokenVo))
                 .withIssuedAt(iatDate) // sign time
                 .withExpiresAt(expiresDate) // expire time
                 .sign(Algorithm.HMAC256(SECRET)); // signature
@@ -95,25 +94,19 @@ public class JwtTokenUtils {
      * @param token
      * @return user_id
      */
-    public static UserVo userVo(String token) throws Exception {
+    public static UserTokenVo userVo(String token) throws Exception {
         Map<String, Claim> claims = verifyToken(token);
-        Claim userid = claims.get("userid");
-        Claim username = claims.get("username");
-        if (StringUtils.isEmpty(userid) || StringUtils.isEmpty(username)) {
+        Claim userTOkenVo = claims.get("userTokenVo");
+        if (StringUtils.isEmpty(userTOkenVo) || StringUtils.isEmpty(userTOkenVo)) {
             // token 校验失败, 抛出Token验证非法异常
             throw new Exception("token参数异常!");
         }
-        return new UserVo(userid.asLong(), username.asString());
+//        logger.error(userTOkenVo.asString());
+        return JsonUtils.json2Object(userTOkenVo.asString(), UserTokenVo.class);
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(createToken(
-                1000l,
-                "charlie"
-        ));
 
-        String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjMwNTI2MTgsInVzZXJpZCI6MTAwMCwiaWF0IjoxNjIyMTg4NjE4LCJ1c2VybmFtZSI6ImNoYXJsaWUifQ.N0FTzKdI2zf0pgDC-MLtkC-xHnCttEIUwiwy1KSc0yk";
-        System.out.println(JwtTokenUtils.verifyToken(token));
     }
 
 }

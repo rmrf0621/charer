@@ -70,7 +70,7 @@ public class UserEntity implements Serializable {
     /**
      * 是否已删除
      */
-    private String delete;
+    private Integer delete;
 
     /**
      * 创建时间

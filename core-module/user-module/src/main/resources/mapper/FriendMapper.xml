@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sharer.userEntity.mapper.FriendMapper">
+<mapper namespace="com.sharer.user.mapper.FriendMapper">
+
+    <select id="queryListByUserId" resultType="com.sharer.user.vo.FriendsVo">
+        select
+            f.uid,
+            f.friend_uid,
+            u.nickname,
+            f.alias,
+            u.portrait,
+            f.add_way,
+            f.pinyin,
+            u.mobile,
+            'friend' AS friend
+        from
+            t_friend f
+        left join t_user u on u.id = f.friend_uid
+        where
+            f.uid = #{userid}
+    </select>
 
 </mapper>

@@ -11,5 +11,7 @@ public class UserVo implements Serializable {
 
     private String password;
 
+    private String deviceType;
+
     private String mobile;
 }

@@ -25,6 +25,6 @@ public class GeneraterResult<T> {
     }
 
     public static <T> Result fail(Integer code, String message) {
-        return new Result(code, "请求失败!");
+        return new Result(code, message);
     }
 }

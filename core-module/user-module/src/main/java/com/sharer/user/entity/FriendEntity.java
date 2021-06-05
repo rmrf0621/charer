@@ -1,10 +1,12 @@
 package com.sharer.user.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -12,7 +14,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author sharer
- * @since 2021-05-31
+ * @since 2021-06-02
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -37,11 +39,6 @@ public class FriendEntity implements Serializable {
     private Integer status;
 
     /**
-     * 时间戳
-     */
-    private Long datestamp;
-
-    /**
      * 别名
      */
     private String alias;
@@ -55,6 +52,21 @@ public class FriendEntity implements Serializable {
      * 其他
      */
     private String extra;
+
+    private String pinyin;
+
+    /**
+     * 好友添加方式
+     */
+    private String addWay;
+
+    private String portrait;
+
+    /**
+     * 添加好友时间
+     */
+    //@JsonFormat(timezone = "GMT+8", pattern = "yyyyMMddHHmmss")
+    private LocalDateTime addTime;
 
 
 }
