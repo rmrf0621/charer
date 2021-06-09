@@ -33,7 +33,9 @@ public class SessionCacheRedisImpl implements SessionCacheService {
     @Override
     public SessionCache get(String sessionId) {
         String key = REDIS_PREFIX + sessionId;
+        System.out.println(key);
         String value = (String) stringRedisTemplate.opsForValue().get(key);
+        String valueaa = (String) stringRedisTemplate.opsForValue().get("userCache:uid:charlie");
 
         if (!StringUtils.isEmpty(value)) {
             return JsonUtils.json2Object(value, SessionCache.class);

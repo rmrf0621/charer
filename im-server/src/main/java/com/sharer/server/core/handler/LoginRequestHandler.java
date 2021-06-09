@@ -37,8 +37,6 @@ public class LoginRequestHandler extends ChannelInboundHandlerAdapter {
             return;
         }
         log.error("=====================登录登录=======================");
-        //log.error(JsonUtils.toJSONString(request.getLogin()));
-        //ctx.channel().writeAndFlush(handlerLoginRespone(request.getLogin()));
         // 登录session封装
         LocalSession localSession = new LocalSession(ctx.channel());
         CallbackTaskScheduler.add(new CallbackTask<Boolean>() {

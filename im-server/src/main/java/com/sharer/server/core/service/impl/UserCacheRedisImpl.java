@@ -26,14 +26,14 @@ public class UserCacheRedisImpl implements UserCacheService {
 
     @Override
     public void save(UserCache uss) {
-        String key = REDIS_PREFIX + uss.getAccount();
+        String key = REDIS_PREFIX + uss.getAccount().trim();
         String value = JsonUtils.toJSONString(uss);
         stringRedisTemplate.opsForValue().set(key, value, CASHE_LONG, TimeUnit.MINUTES);
     }
 
     @Override
     public UserCache get(String account) {
-        String key = REDIS_PREFIX + account;
+        String key = REDIS_PREFIX + account.trim();
         String value = (String) stringRedisTemplate.opsForValue().get(key);
 
         if (!StringUtils.isEmpty(value)) {
@@ -56,8 +56,7 @@ public class UserCacheRedisImpl implements UserCacheService {
     @Override
     public void removeSession(String uid, String sessionId) {
         UserCache us = get(uid);
-        if (null == us)
-        {
+        if (null == us) {
             us = new UserCache(uid);
         }
         us.removeSession(sessionId);
