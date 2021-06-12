@@ -35,7 +35,7 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, FriendEntity> i
             log.error("无效的用户ID:{}", userid);
             return new ArrayList<>();
         }
-        return friendMapper.queryListByUserId("" + userid);
+        return friendMapper.queryListByUserId(userid.toString());
         //return friendMapper.selectList(new QueryWrapper<FriendEntity>().lambda().eq(FriendEntity::getUid, userid));
     }
 }

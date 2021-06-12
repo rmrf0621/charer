@@ -99,7 +99,7 @@ public class SessionManager {
         //分布式：分布式保存user和所有session，根据 sessionId 删除用户的会话
         UserCache user = userCacheService.get(account);
         if (null == user) {
-            log.info("用户：{} 下线了? 没有在缓存中找到记录 ", account);
+            log.info("用户：{} 下线了?   没有在缓存中找到记录 ", account);
             return null;
         }
         Map<String, SessionCache> allSession = user.getMap();

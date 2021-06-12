@@ -1,6 +1,6 @@
 package com.sharer.common.utils;
 
-public class GeneraterResult<T> {
+public class ResultGenerater<T> {
 
 
 

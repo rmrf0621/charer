@@ -29,7 +29,7 @@ public class LoginProcesser extends AbstractServerProcesser {
     public Boolean action(LocalSession session, RequestProto.Request proto) {
         // 验证token
         RequestProto.Login login = proto.getLogin();
-        log.error(JsonUtils.toJSONString(login));
+        log.error(login.toString());
         // redis 认证
         String key = IMContanst.TOKEN_HEADER.replace(IMContanst.ACCOUNT, login.getAccount()).replace(IMContanst.DEVICE_MODEL,login.getDeviceModel());
         String imtoken = (String)redisTemplate.opsForValue().get(key);

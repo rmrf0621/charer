@@ -48,7 +48,7 @@ class HelloClientIntHandler extends ChannelInboundHandlerAdapter {
         RequestProto.Request.Builder builders = RequestProto.Request.newBuilder();
         RequestProto.Message.Builder message = RequestProto.Message.newBuilder();
         message.setId(10000 + index);
-        message.setContent(account + "发送给" + to + "的第" + index + "条消息");
+        message.setContent("第 "+index+" 条消息"+account + "发送给" + to + "的");
         message.setMsgType(RequestProto.MsgType.TEXT);
         message.setFrom(account);
         message.setTo(to);

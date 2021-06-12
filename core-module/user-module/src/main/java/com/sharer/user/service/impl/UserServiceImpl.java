@@ -4,7 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.digest.MD5;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.sharer.common.utils.GeneraterResult;
+import com.sharer.common.utils.ResultGenerater;
 import com.sharer.common.utils.Result;
 import com.sharer.user.entity.UserEntity;
 import com.sharer.user.mapper.UserMapper;
@@ -44,7 +44,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
     @Override
     public Result createAccount(UserVo userVo) {
         if (isExist(userVo.getUsername())) {
-            return GeneraterResult.fail("当前用户已存在!");
+            return ResultGenerater.fail("当前用户已存在!");
         }
         UserEntity userEntity = new UserEntity();
         userEntity.setAccount(userVo.getUsername());
@@ -55,8 +55,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         userEntity.setGender(1);
         //userEntity.setPortrait();
         userEntity.setMobile(userVo.getMobile());
-        userEntity.setDelete(0);
+        userEntity.setIsDelete(0);
         userMapper.insert(userEntity);
-        return GeneraterResult.success("用户创建成功!");
+        return ResultGenerater.success("用户创建成功!");
+    }
+
+    @Override
+    public UserEntity queryByUsername(String username) {
+        return userMapper.selectOne(new QueryWrapper<UserEntity>().lambda().eq(UserEntity::getAccount,username));
     }
 }

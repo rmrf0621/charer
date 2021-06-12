@@ -1,5 +1,7 @@
 package com.sharer.user.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -9,7 +11,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author sharer
@@ -22,6 +24,8 @@ public class UserEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(type = IdType.AUTO)
+    private Long id;
     /**
      * 账号
      */
@@ -70,7 +74,7 @@ public class UserEntity implements Serializable {
     /**
      * 是否已删除
      */
-    private Integer delete;
+    private Integer isDelete;
 
     /**
      * 创建时间

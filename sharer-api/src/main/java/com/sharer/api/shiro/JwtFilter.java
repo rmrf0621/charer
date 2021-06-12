@@ -4,8 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sharer.api.shiro.vo.UserTokenVo;
 import com.sharer.common.IMContanst;
-import com.sharer.common.utils.GeneraterResult;
-import com.sharer.common.utils.JsonUtils;
+import com.sharer.common.utils.ResultGenerater;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -58,7 +57,7 @@ public class JwtFilter implements Filter {
         try {
             UserTokenVo userVo = JwtTokenUtils.userVo(token);
             // 验证token是否过期
-            String redisToken = redisTemplate.opsForValue().get(IMContanst.TOKEN_HEADER.replace(IMContanst.ACCOUNT, userVo.getUsername()).replace(IMContanst.DEVICE_MODEL, userVo.getDeviceType()));
+            String redisToken = redisTemplate.opsForValue().get(IMContanst.TOKEN_HEADER.replace(IMContanst.ACCOUNT, ""+userVo.getUserid()).replace(IMContanst.DEVICE_MODEL, userVo.getDeviceType()));
             if (StrUtil.isBlankIfStr(redisToken)) {
                 failResult(servletResponse, "token过期");
                 return;
@@ -76,7 +75,7 @@ public class JwtFilter implements Filter {
         servletResponse.setCharacterEncoding("UTF-8");
         servletResponse.setContentType("application/json; charset=utf-8");
         PrintWriter out = servletResponse.getWriter();
-        out.write(objectMapper.writeValueAsString(GeneraterResult.fail(403,message)));
+        out.write(objectMapper.writeValueAsString(ResultGenerater.fail(403,message)));
     }
 
 }

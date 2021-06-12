@@ -26,4 +26,11 @@ public interface IUserService extends IService<UserEntity> {
      * @param userVo
      */
     public Result createAccount(UserVo userVo);
+
+    /**
+     * 通过用户的账号查询用户
+     * @param username
+     * @return
+     */
+    UserEntity queryByUsername(String username);
 }
